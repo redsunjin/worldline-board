@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A Galton-board-inspired visualizer for decision traces, uncertainty, and branching workflows.">
+<title>Worldline Board</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<main class="shell">
+<header class="hero"><div><p class="eyebrow">OPEN SOURCE · PROVIDER NEUTRAL</p><h1>Worldline Board</h1><p class="lead">Watch a structured decision trace fall through meaningful pegs. Cosmetic collisions are visual only; semantic pegs come from the trace.</p></div><a class="github" href="https://github.com/redsunjin/worldline-board">GitHub ↗</a></header>
+<section class="controls"><label>Example<select id="example"><option value="steady">Steady branch</option><option value="review">Human review pause</option></select></label><button id="play">▶ Sigma Drop</button><button id="step">Step</button><button id="reset" class="ghost">Reset</button></section>
+<section class="workspace">
+<article class="board-card"><div class="board-head"><div><p class="eyebrow">SIGMA DROP</p><h2 id="title">—</h2></div><div class="metric"><span>Deviation</span><strong id="sigma">—</strong></div></div><div class="stage"><svg id="board" role="img" aria-label="Decision trace visualizer"></svg><div class="legend"><span class="code">Code</span><span class="judgment">Judgment</span><span class="policy">Policy</span><span class="review">Human</span><span class="branch">Branch</span></div></div><div class="board-foot"><div><span>Status</span><strong id="status">—</strong></div><div><span>Terminal</span><strong id="terminal">—</strong></div></div></article>
+<aside class="inspector"><p class="eyebrow">PEG INSPECTOR</p><h2 id="pegTitle">Drop the ball</h2><p id="pegNote" class="muted">Step through the semantic trace.</p><dl><div><dt>Kind</dt><dd id="kind">—</dd></div><div><dt>Answer</dt><dd id="answer">—</dd></div><div><dt>Confidence</dt><dd id="confidence">—</dd></div><div><dt>Route</dt><dd id="route">—</dd></div></dl><span class="small-label">Distribution</span><div id="probabilities" class="probabilities"><p class="muted small">Shown for judgment pegs.</p></div><div class="callout"><strong>Visual peg ≠ model call</strong><p>Small gray pegs are decorative. Only large colored pegs are semantic events supplied by the trace.</p></div></aside>
+</section>
+</main>
+<script type="module" src="/app.js"></script>
+</body>
+</html>
