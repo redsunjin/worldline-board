@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/redsunjin/worldline-board/blob/main/schema/board-trace-v0.schema.json",
+  "title": "Worldline Board Trace v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "traceId",
+    "status",
+    "steps"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "worldline-board-trace-v0"
+    },
+    "traceId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "branch",
+        "review_required",
+        "error"
+      ]
+    },
+    "terminalScenario": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "sequence",
+          "nodeId",
+          "kind",
+          "label",
+          "state",
+          "summary"
+        ],
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "nodeId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "code",
+              "judgment",
+              "policy",
+              "review",
+              "branch"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "state": {
+            "enum": [
+              "resolved",
+              "paused",
+              "terminal",
+              "error"
+            ]
+          },
+          "routeTo": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "summary": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "primitive": {
+                "enum": [
+                  "choice",
+                  "score",
+                  "noul"
+                ]
+              },
+              "answer": {},
+              "confidence": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              },
+              "topLevel": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "probabilities": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "additionalProperties": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "deviation": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "band"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "band": {
+                    "enum": [
+                      "normal",
+                      "elevated",
+                      "high",
+                      "critical",
+                      "unknown"
+                    ]
+                  }
+                }
+              },
+              "scenarioId": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

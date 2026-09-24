@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "worldline-board-trace-v0",
+  "traceId": "steady-demo",
+  "title": "Steady path",
+  "status": "branch",
+  "terminalScenario": "maintain",
+  "steps": [
+    {
+      "sequence": 1,
+      "nodeId": "baseline",
+      "kind": "code",
+      "label": "Baseline & deviation",
+      "state": "resolved",
+      "routeTo": "context",
+      "summary": {
+        "deviation": {
+          "value": 0.45,
+          "band": "normal"
+        },
+        "note": "Synthetic example"
+      }
+    },
+    {
+      "sequence": 2,
+      "nodeId": "context",
+      "kind": "judgment",
+      "label": "Need more context?",
+      "state": "resolved",
+      "routeTo": "regime",
+      "summary": {
+        "primitive": "noul",
+        "answer": 0.08,
+        "probabilities": {
+          "no": 0.92,
+          "yes": 0.08
+        }
+      }
+    },
+    {
+      "sequence": 3,
+      "nodeId": "regime",
+      "kind": "judgment",
+      "label": "Current regime",
+      "state": "resolved",
+      "routeTo": "divergence",
+      "summary": {
+        "primitive": "choice",
+        "answer": "stable",
+        "confidence": 0.78,
+        "probabilities": {
+          "stable": 0.79,
+          "exploration": 0.1,
+          "temporary_noise": 0.08,
+          "stress": 0.03
+        }
+      }
+    },
+    {
+      "sequence": 4,
+      "nodeId": "divergence",
+      "kind": "judgment",
+      "label": "Divergence strength",
+      "state": "resolved",
+      "routeTo": "routing",
+      "summary": {
+        "primitive": "score",
+        "answer": 0.18,
+        "topLevel": "low",
+        "confidence": 0.86,
+        "probabilities": {
+          "low": 0.88,
+          "medium": 0.1,
+          "high": 0.02,
+          "critical": 0
+        }
+      }
+    },
+    {
+      "sequence": 5,
+      "nodeId": "routing",
+      "kind": "policy",
+      "label": "Open worldlines",
+      "state": "resolved",
+      "routeTo": "maintain",
+      "summary": {
+        "note": "Stable + low divergence"
+      }
+    },
+    {
+      "sequence": 6,
+      "nodeId": "maintain",
+      "kind": "branch",
+      "label": "Maintain",
+      "state": "terminal",
+      "routeTo": null,
+      "summary": {
+        "scenarioId": "maintain"
+      }
+    }
+  ]
+}

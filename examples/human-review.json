@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "worldline-board-trace-v0",
+  "traceId": "human-review-demo",
+  "title": "Human review pause",
+  "status": "review_required",
+  "terminalScenario": null,
+  "steps": [
+    {
+      "sequence": 1,
+      "nodeId": "baseline",
+      "kind": "code",
+      "label": "Baseline & deviation",
+      "state": "resolved",
+      "routeTo": "regime",
+      "summary": {
+        "deviation": {
+          "value": 2.15,
+          "band": "high"
+        },
+        "note": "Synthetic example"
+      }
+    },
+    {
+      "sequence": 2,
+      "nodeId": "regime",
+      "kind": "judgment",
+      "label": "Current regime",
+      "state": "resolved",
+      "routeTo": "routing",
+      "summary": {
+        "primitive": "choice",
+        "answer": "exploration",
+        "confidence": 0.31,
+        "probabilities": {
+          "exploration": 0.48,
+          "stress": 0.43,
+          "temporary_noise": 0.06,
+          "stable": 0.03
+        }
+      }
+    },
+    {
+      "sequence": 3,
+      "nodeId": "routing",
+      "kind": "policy",
+      "label": "Ambiguity gate",
+      "state": "resolved",
+      "routeTo": "human_review",
+      "summary": {
+        "note": "Top alternatives are too close"
+      }
+    },
+    {
+      "sequence": 4,
+      "nodeId": "human_review",
+      "kind": "review",
+      "label": "Your choice is needed",
+      "state": "paused",
+      "routeTo": null,
+      "summary": {
+        "note": "Multiple branches stay open instead of pretending certainty."
+      }
+    }
+  ]
+}
