@@ -51,7 +51,9 @@ Any system can produce this contract: rule engines, AI agents, LLM workflows, hu
 
 This repository is designed as a static site and can be deployed directly to Vercel with no secrets.
 
-[Deploy with Vercel](https://vercel.com/new/clone?repository-url=https://github.com/redsunjin/worldline-board)
+Maintainer deployment: in Vercel choose **Add New → Project → Import Git Repository** and select `redsunjin/worldline-board`.
+
+For third parties who want their own copy, the standard Vercel Deploy Button / clone flow can also be used.
 
 No provider API key is required or expected in this public project.
 
