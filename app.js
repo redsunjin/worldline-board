@@ -8,6 +8,13 @@ const state={trace:null,scene:null,index:-1,timer:null};
 const $=id=>document.getElementById(id);
 const svg=$("board");
 const worldlineSvg=$("worldlineFan");
+const MOBILE_QUERY="(max-width:720px)";
+
+function sceneOptions(){
+  if(!window.matchMedia(MOBILE_QUERY).matches)return{};
+  const measuredWidth=Math.round(svg.getBoundingClientRect().width||window.innerWidth-16);
+  return{width:Math.max(320,measuredWidth),height:430};
+}
 
 function el(name,attrs={}){
   const n=document.createElementNS("http://www.w3.org/2000/svg",name);
@@ -306,7 +313,7 @@ async function load(key){
   stop();
   const r=await fetch(EXAMPLES[key]);
   state.trace=await r.json();
-  state.scene=buildBoardScene(state.trace);
+  state.scene=buildBoardScene(state.trace,sceneOptions());
   state.index=-1;
   $("title").textContent=state.trace.title||state.trace.traceId;
   inspect(-1);
@@ -318,5 +325,19 @@ $("example").addEventListener("change",e=>load(e.target.value));
 $("play").addEventListener("click",()=>state.timer?stop():play());
 $("step").addEventListener("click",()=>{stop();step()});
 $("reset").addEventListener("click",reset);
+
+let resizeFrame=null;
+window.addEventListener("resize",()=>{
+  if(resizeFrame)cancelAnimationFrame(resizeFrame);
+  resizeFrame=requestAnimationFrame(()=>{
+    resizeFrame=null;
+    if(!state.trace)return;
+    const currentIndex=state.index;
+    state.scene=buildBoardScene(state.trace,sceneOptions());
+    state.index=currentIndex<0?-1:Math.min(currentIndex,state.scene.semanticPegs.length-1);
+    syncExperience();
+    render();
+  });
+});
 
 load("steady").catch(console.error);
