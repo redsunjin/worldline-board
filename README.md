@@ -14,6 +14,12 @@ The main surface shows the trace-supplied deviation from a supplied baseline. Th
 
 > Visual peg ≠ model call. Only semantic trace events are decisions.
 
+## Current status and next plan
+
+The canonical working baseline is [`docs/00-current-status-and-plan.md`](docs/00-current-status-and-plan.md).
+
+It records completed milestones, current conceptual debt, and the next work item: **Visual Motion ≠ Semantic Trace**.
+
 ## What this repository is
 
 This is the **public, provider-neutral visualization layer**.
