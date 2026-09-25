@@ -39,3 +39,20 @@ Keep engine terminology in Trace details. The main surface should answer what ch
 ## Probability boundary
 
 Colors, line thickness, glow intensity, and screen position must never be described as objective future-event likelihood. If the trace supplies confidence or a judgment distribution, it remains evidence in Trace details.
+
+
+## Mobile composition
+
+The mobile layout keeps the product story in one vertical rhythm:
+
+```text
+Drop → deviation result → worldline fan → optional trace details
+```
+
+Rules:
+- reduce the Galton stage height before shrinking semantic meaning;
+- keep the sigma result beside its explanation instead of stacking it into a tall card;
+- keep the worldline fan visible, but make supporting worldline cards horizontally swipeable;
+- reduce ambient background glow on small screens;
+- preserve glow for the active ball, result, and active path only;
+- keep Trace details secondary and collapsed by default.
