@@ -96,6 +96,7 @@ export function buildBoardScene(trace,{width=760,height=760,rows=12}={}){
     deviation,
     deviationIndex,
     sigmaGuides,
+    worldlines:Array.isArray(trace.worldlines)?trace.worldlines:[],
     status:trace.status,
     terminalScenario:trace.terminalScenario??null
   };

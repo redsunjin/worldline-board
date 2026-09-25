@@ -45,3 +45,12 @@ These values are not presented as objective probabilities of future real-world e
 ## Public boundary
 
 The board does not contain Jev API calls, credentials, private workflow state, production routing thresholds, private state projections, or live evaluation reports. Those remain responsibilities of the engine that emits the sanitized trace.
+
+
+### Worldlines
+
+`BoardTrace.worldlines` is optional and contains only sanitized paths supplied by the producer. The Board never invents missing branches.
+
+Each worldline may provide a scenario id, user-facing label, state, evidence label, and short note. The renderer can visually fan these paths after the result is reached.
+
+Worldline hue is a presentation device for separating paths. **Blue, violet, and coral do not encode likelihood or future-event probability.**

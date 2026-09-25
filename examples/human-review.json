@@ -61,5 +61,28 @@
         "note": "Multiple branches stay open instead of pretending certainty."
       }
     }
+  ],
+  "worldlines": [
+    {
+      "scenarioId": "return",
+      "label": "Return",
+      "state": "open",
+      "evidenceLabel": "Baseline return",
+      "note": "One possible path is a move back toward the prior baseline."
+    },
+    {
+      "scenarioId": "adapt",
+      "label": "Adapt",
+      "state": "paused",
+      "evidenceLabel": "Needs human judgment",
+      "note": "Keep the changed pattern open while a person reviews the ambiguity."
+    },
+    {
+      "scenarioId": "transition",
+      "label": "Transition",
+      "state": "open",
+      "evidenceLabel": "Regime-shift alternative",
+      "note": "Treat a larger transition as possible, not certain."
+    }
   ]
 }

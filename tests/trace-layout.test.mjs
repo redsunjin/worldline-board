@@ -93,3 +93,17 @@ test("non-code deviation steps also align to the sigma scale",()=>{
   const guide=scene.sigmaGuides.find(g=>g.value===2);
   assert.equal(scene.semanticPegs[0].x,guide.x);
 });
+
+
+test("worldlines are passed through without synthesis",()=>{
+  const trace={...steady,worldlines:[
+    {scenarioId:"maintain",label:"Maintain",state:"active",evidenceLabel:"Stable / low divergence"}
+  ]};
+  const scene=buildBoardScene(trace);
+  assert.deepEqual(scene.worldlines,trace.worldlines);
+});
+
+test("trace without worldlines does not invent branches",()=>{
+  const scene=buildBoardScene(deviationTrace(0));
+  assert.deepEqual(scene.worldlines,[]);
+});

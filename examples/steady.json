@@ -97,5 +97,28 @@
         "scenarioId": "maintain"
       }
     }
+  ],
+  "worldlines": [
+    {
+      "scenarioId": "maintain",
+      "label": "Maintain",
+      "state": "active",
+      "evidenceLabel": "Stable / low divergence",
+      "note": "Stay near the current baseline and keep observing."
+    },
+    {
+      "scenarioId": "experiment",
+      "label": "Experiment",
+      "state": "open",
+      "evidenceLabel": "Alternative remains open",
+      "note": "Try a bounded change without treating it as a prediction."
+    },
+    {
+      "scenarioId": "transition",
+      "label": "Transition",
+      "state": "open",
+      "evidenceLabel": "Needs stronger evidence",
+      "note": "A larger shift remains possible if later evidence supports it."
+    }
   ]
 }
