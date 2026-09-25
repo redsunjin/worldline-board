@@ -24,7 +24,8 @@ It renders:
 - policy/routing steps;
 - human-review pauses;
 - terminal branches;
-- trace-supplied deviation against μ / ±σ guides.
+- trace-supplied deviation against μ / ±σ guides;
+- optional trace-supplied worldlines after the result.
 
 It does **not** contain:
 - Jev API keys or API calls;
@@ -59,7 +60,11 @@ The renderer consumes a small `BoardTrace` JSON contract. See:
 
 Any system can produce this contract: rule engines, AI agents, LLM workflows, human processes, or private decision engines.
 
-The board renders only what the sanitized contract supplies. If historical distribution data is not present, the board does not fabricate a histogram.
+The board renders only what the sanitized contract supplies. If historical distribution data is not present, the board does not fabricate a histogram. If worldlines are absent, it does not invent branches.
+
+## Visual language
+
+The public UI follows the original dark-navy Sigma Drop direction: cool blue for baseline/normal states, violet for ambiguity, coral for larger deviations and branch emphasis, and orange for human attention. Branch hues separate paths visually; they never encode probability. See `docs/visual-language.md`.
 
 ## Deploy
 
