@@ -19,10 +19,10 @@ test("mobile worldline cards use horizontal swipe instead of a tall stack",()=>{
   );
 });
 
-test("mobile controls use a compact three-action grid",()=>{
+test("mobile advanced controls use a compact two-action grid",()=>{
   assert.match(
     css,
-    /\.controls\{display:grid;grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/
+    /\.controls\{display:grid;grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/
   );
 });
 

@@ -56,3 +56,16 @@ Rules:
 - reduce ambient background glow on small screens;
 - preserve glow for the active ball, result, and active path only;
 - keep Trace details secondary and collapsed by default.
+
+
+## READY entry
+
+The first screen should feel like a product, not a debugger.
+
+Default hierarchy:
+1. explain the question in human language;
+2. show one primary **Start Sigma Drop** action;
+3. show the short flow **Drop → Read σ → See worlds**;
+4. keep example selection, step-through, and reset under **Advanced controls**.
+
+Do not remove the developer controls; demote them. The public default should make the purpose understandable before exposing workflow mechanics.

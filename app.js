@@ -198,8 +198,8 @@ function syncExperience(){
   if(!complete){
     result.className="result-card pending";
     $("resultSigma").textContent="—";
-    $("resultBand").textContent=state.index<0?"Ready for Sigma Drop":"Reading the supplied trace…";
-    $("resultMessage").textContent="The result appears after the semantic trace reaches its final supplied state.";
+    $("resultBand").textContent=state.index<0?"Ready when you are":"Reading the supplied trace…";
+    $("resultMessage").textContent=state.index<0?"Start the drop to see the supplied deviation and any open worldlines.":"The result appears after the semantic trace reaches its final supplied state.";
     $("status").textContent=state.index<0?"ready":"in progress";
     $("terminal").textContent="—";
     return;
@@ -279,7 +279,7 @@ function render(){
 function stop(){
   if(state.timer)clearInterval(state.timer);
   state.timer=null;
-  $("play").textContent="▶ Sigma Drop";
+  $("play").textContent="▶ Start Sigma Drop";
   syncExperience();
 }
 
