@@ -2,7 +2,8 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import test from "node:test";
 
-const css=fs.readFileSync("styles.css","utf8");\nconst app=fs.readFileSync("app.js","utf8");
+const css=fs.readFileSync("styles.css","utf8");
+const app=fs.readFileSync("app.js","utf8");
 
 test("mobile board keeps the Sigma Drop stage compact",()=>{
   assert.match(css,/@media\(max-width:720px\)[\s\S]*\.stage,#board\{min-height:430px\}/);
