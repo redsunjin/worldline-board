@@ -72,3 +72,24 @@ test("sigma scale is centered on mu and symmetric",()=>{
   assert.equal(mu-sigmaX(-1),sigmaX(1)-mu);
   assert.equal(mu-sigmaX(-2),sigmaX(2)-mu);
 });
+
+
+test("non-code deviation steps also align to the sigma scale",()=>{
+  const trace=deviationTrace(0);
+  trace.steps[0]={
+    sequence:1,
+    nodeId:"judgment-deviation",
+    kind:"judgment",
+    label:"Judgment with deviation",
+    state:"resolved",
+    routeTo:"done",
+    summary:{
+      primitive:"choice",
+      answer:"stable",
+      deviation:{value:2,band:"high"}
+    }
+  };
+  const scene=buildBoardScene(trace);
+  const guide=scene.sigmaGuides.find(g=>g.value===2);
+  assert.equal(scene.semanticPegs[0].x,guide.x);
+});

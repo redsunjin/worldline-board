@@ -60,7 +60,7 @@ export function buildBoardScene(trace,{width=760,height=760,rows=12}={}){
   let prev=.5;
   const semanticPegs=trace.steps.map((step,index)=>{
     const deviationValue=step.summary?.deviation?.value;
-    const hasDeviation=step.kind==="code"&&Number.isFinite(deviationValue);
+    const hasDeviation=Number.isFinite(deviationValue);
     const baseXNorm=semanticX(step,prev);
     const x=hasDeviation?sigmaX(deviationValue,{width,marginX}):marginX+baseXNorm*usableWidth;
     const xNorm=(x-marginX)/usableWidth;
