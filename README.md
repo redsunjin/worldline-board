@@ -1,8 +1,16 @@
 # Worldline Board
 
-**A Galton-board-inspired visualizer for decision traces, uncertainty, and branching workflows.**
+**A Galton-board-inspired visualizer for sanitized decision traces, deviation, and branching workflows.**
 
-Worldline Board turns a structured execution trace into an interactive **Sigma Drop**: a ball moves through meaningful decision pegs while cosmetic Galton pegs provide visual motion.
+Worldline Board turns a structured execution trace into an interactive **Sigma Drop**. The public experience is result-first:
+
+```text
+READY → SIGMA DROP → RESULT → TRACE DETAILS
+```
+
+The main surface shows the trace-supplied deviation from a supplied baseline. The detailed view explains the semantic events that followed.
+
+> σ guides describe deviation only. Later horizontal routing is semantic layout, not probability.
 
 > Visual peg ≠ model call. Only semantic trace events are decisions.
 
@@ -15,14 +23,18 @@ It renders:
 - model/judgment steps;
 - policy/routing steps;
 - human-review pauses;
-- terminal branches.
+- terminal branches;
+- trace-supplied deviation against μ / ±σ guides.
 
 It does **not** contain:
 - Jev API keys or API calls;
 - private Worldline Engine workflow definitions;
 - production routing thresholds;
 - live evaluation reports;
-- private state-projection rules.
+- private state-projection rules;
+- synthetic histograms or invented baseline data.
+
+Judgment confidence and distributions may be shown in **Trace details** when supplied by the trace. They are evidence attached to the trace, not objective future-event probabilities.
 
 ## Quick start
 
@@ -46,6 +58,8 @@ The renderer consumes a small `BoardTrace` JSON contract. See:
 - `examples/human-review.json`
 
 Any system can produce this contract: rule engines, AI agents, LLM workflows, human processes, or private decision engines.
+
+The board renders only what the sanitized contract supplies. If historical distribution data is not present, the board does not fabricate a histogram.
 
 ## Deploy
 
