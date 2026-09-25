@@ -50,7 +50,7 @@ Drop → deviation result → worldline fan → optional trace details
 ```
 
 Rules:
-- reduce the Galton stage height before shrinking semantic meaning;
+- cap the mobile Galton stage at an actual 430px height and rebuild scene geometry from the rendered board width, rather than relying on `min-height`;
 - keep the sigma result beside its explanation instead of stacking it into a tall card;
 - keep the worldline fan visible, but make supporting worldline cards horizontally swipeable;
 - reduce ambient background glow on small screens;
