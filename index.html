@@ -13,23 +13,40 @@
     <div>
       <p class="eyebrow">OPEN SOURCE · PROVIDER NEUTRAL</p>
       <h1>Worldline Board</h1>
-      <p class="lead">Drop a sanitized decision trace, see how far the observation sits from its supplied baseline, then inspect the semantic path that followed.</p>
+      <p class="lead">See how far an observation sits from its usual range, then see which paths remain open.</p>
       <p class="brand-line">Same data. More worlds.</p>
     </div>
     <a class="github" href="https://github.com/redsunjin/worldline-board">GitHub ↗</a>
   </header>
 
-  <section class="controls" aria-label="Sigma Drop controls">
-    <label>Example
-      <select id="example">
-        <option value="steady">Steady branch</option>
-        <option value="review">Human review pause</option>
-      </select>
-    </label>
-    <button id="play" class="primary">▶ Sigma Drop</button>
-    <button id="step">Step</button>
-    <button id="reset" class="ghost">Reset</button>
+  <section class="ready-panel" aria-labelledby="readyTitle">
+    <div class="ready-copy">
+      <p class="eyebrow">READY</p>
+      <h2 id="readyTitle">How far from the usual range?</h2>
+      <p>One drop turns this sanitized trace into a deviation result, then reveals only the worldlines supplied by the trace.</p>
+      <div class="ready-flow" aria-label="Sigma Drop flow">
+        <span>Drop</span><i>→</i><span>Read σ</span><i>→</i><span>See worlds</span>
+      </div>
+    </div>
+    <button id="play" class="primary start-cta">▶ Start Sigma Drop</button>
   </section>
+
+  <details class="advanced-controls">
+    <summary>
+      <span><strong>Advanced controls</strong><small>Example selection, step-through, and reset</small></span>
+      <span class="summary-hint">Open</span>
+    </summary>
+    <div class="controls" aria-label="Advanced Sigma Drop controls">
+      <label>Example
+        <select id="example">
+          <option value="steady">Steady branch</option>
+          <option value="review">Human review pause</option>
+        </select>
+      </label>
+      <button id="step">Step</button>
+      <button id="reset" class="ghost">Reset</button>
+    </div>
+  </details>
 
   <section class="workspace">
     <article class="board-card">
