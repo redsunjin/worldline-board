@@ -1,10 +1,13 @@
 import{buildBoardScene}from"/src/trace-layout.mjs";
 
 const EXAMPLES={steady:"/examples/steady.json",review:"/examples/human-review.json"};
-const COLORS={code:"#69a7ff",judgment:"#9c7cff",policy:"#f0b75f",review:"#ff8d6b",branch:"#65d6a6"};
+const COLORS={code:"#74adff",judgment:"#a47cff",policy:"#7f91ff",review:"#ff9a64",branch:"#ff5e7f"};
+const WORLDLINE_COLORS=["#74adff","#a47cff","#ff5e7f","#6fd6ff","#c98cff"];
+const DEVIATION_COLORS={normal:"#74adff",elevated:"#a47cff",high:"#ff6a7f",critical:"#ff4668",unknown:"#8ea0b8"};
 const state={trace:null,scene:null,index:-1,timer:null};
 const $=id=>document.getElementById(id);
 const svg=$("board");
+const worldlineSvg=$("worldlineFan");
 
 function el(name,attrs={}){
   const n=document.createElementNS("http://www.w3.org/2000/svg",name);
@@ -37,6 +40,108 @@ function resultCopy(deviation){
   };
   const [title,message,tone]=byBand[deviation.band]||byBand.unknown;
   return{title,message,tone};
+}
+
+function worldlineColor(index){
+  return WORLDLINE_COLORS[index%WORLDLINE_COLORS.length];
+}
+
+function drawWorldlineFan(worldlines){
+  worldlineSvg.setAttribute("viewBox","0 0 760 230");
+  worldlineSvg.replaceChildren();
+  if(!worldlines.length)return;
+
+  const start={x:380,y:42};
+  const deviation=state.scene?.deviation;
+  const startColor=DEVIATION_COLORS[deviation?.band]||DEVIATION_COLORS.unknown;
+
+  const startHalo=el("circle",{cx:start.x,cy:start.y,r:18,class:"worldline-start-halo"});
+  startHalo.setAttribute("stroke",startColor);
+  worldlineSvg.append(startHalo);
+
+  const startNode=el("circle",{cx:start.x,cy:start.y,r:7,class:"worldline-start"});
+  startNode.setAttribute("fill",startColor);
+  worldlineSvg.append(startNode);
+
+  const count=worldlines.length;
+  worldlines.forEach((worldline,index)=>{
+    const x=count===1?380:110+index*(540/(count-1));
+    const y=185;
+    const color=worldlineColor(index);
+    const path=el("path",{
+      d:"M "+start.x+" "+(start.y+9)+" C "+start.x+" 92, "+x+" 118, "+x+" "+(y-13),
+      class:"worldline-path"
+    });
+    path.setAttribute("stroke",color);
+    path.style.opacity=worldline.state==="closed"?".28":".9";
+    worldlineSvg.append(path);
+
+    const halo=el("circle",{cx:x,cy:y,r:15,class:"worldline-end-halo"});
+    halo.setAttribute("stroke",color);
+    halo.style.opacity=worldline.state==="active"?".34":".14";
+    worldlineSvg.append(halo);
+
+    const node=el("circle",{cx:x,cy:y,r:7,class:"worldline-end"});
+    node.setAttribute("fill",color);
+    node.style.opacity=worldline.state==="closed"?".36":"1";
+    worldlineSvg.append(node);
+  });
+}
+
+function renderWorldlines(complete){
+  const section=$("worldlines");
+  const cards=$("worldlineCards");
+  const worldlines=state.scene?.worldlines||[];
+  const visible=complete&&worldlines.length>0;
+  section.hidden=!visible;
+
+  if(!visible){
+    worldlineSvg.replaceChildren();
+    cards.replaceChildren();
+    return;
+  }
+
+  drawWorldlineFan(worldlines);
+  cards.replaceChildren();
+
+  worldlines.forEach((worldline,index)=>{
+    const color=worldlineColor(index);
+    const card=document.createElement("article");
+    card.className="worldline-card "+worldline.state;
+    card.style.setProperty("--worldline-color",color);
+
+    const top=document.createElement("div");
+    top.className="worldline-card-top";
+
+    const dot=document.createElement("span");
+    dot.className="worldline-dot";
+
+    const title=document.createElement("strong");
+    title.textContent=worldline.label;
+
+    const stateLabel=document.createElement("span");
+    stateLabel.className="worldline-state";
+    stateLabel.textContent=worldline.state.replace("_"," ");
+
+    top.append(dot,title,stateLabel);
+    card.append(top);
+
+    if(worldline.evidenceLabel){
+      const evidence=document.createElement("p");
+      evidence.className="worldline-evidence";
+      evidence.textContent=worldline.evidenceLabel;
+      card.append(evidence);
+    }
+
+    if(worldline.note){
+      const note=document.createElement("p");
+      note.className="worldline-copy";
+      note.textContent=worldline.note;
+      card.append(note);
+    }
+
+    cards.append(card);
+  });
 }
 
 function probabilities(step){
@@ -80,6 +185,7 @@ function syncExperience(){
   const dropping=Boolean(state.timer);
   const phase=state.index<0?"READY":dropping?"DROPPING":complete?"RESULT":"TRACE";
   $("phase").textContent=phase;
+  renderWorldlines(complete);
 
   const result=$("result");
   if(!complete){
