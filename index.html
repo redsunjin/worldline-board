@@ -14,6 +14,7 @@
       <p class="eyebrow">OPEN SOURCE · PROVIDER NEUTRAL</p>
       <h1>Worldline Board</h1>
       <p class="lead">Drop a sanitized decision trace, see how far the observation sits from its supplied baseline, then inspect the semantic path that followed.</p>
+      <p class="brand-line">Same data. More worlds.</p>
     </div>
     <a class="github" href="https://github.com/redsunjin/worldline-board">GitHub ↗</a>
   </header>
@@ -25,7 +26,7 @@
         <option value="review">Human review pause</option>
       </select>
     </label>
-    <button id="play">▶ Sigma Drop</button>
+    <button id="play" class="primary">▶ Sigma Drop</button>
     <button id="step">Step</button>
     <button id="reset" class="ghost">Reset</button>
   </section>
@@ -64,6 +65,19 @@
           <h3 id="resultBand">Ready for Sigma Drop</h3>
           <p id="resultMessage">The result appears after the semantic trace reaches its final supplied state.</p>
         </div>
+      </section>
+
+      <section id="worldlines" class="worldlines-card" hidden>
+        <div class="worldlines-head">
+          <div>
+            <p class="eyebrow">POSSIBLE WORLDLINES</p>
+            <h3>Paths kept open by this trace</h3>
+          </div>
+          <span>TRACE-SUPPLIED</span>
+        </div>
+        <svg id="worldlineFan" role="img" aria-label="Trace-supplied possible worldlines"></svg>
+        <div id="worldlineCards" class="worldline-cards"></div>
+        <p class="worldline-note">Branch hues separate paths visually. They do not encode likelihood.</p>
       </section>
 
       <div class="board-foot">
