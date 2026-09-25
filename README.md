@@ -5,10 +5,10 @@
 Worldline Board turns a structured execution trace into an interactive **Sigma Drop**. The public experience is result-first:
 
 ```text
-READY → SIGMA DROP → RESULT → TRACE DETAILS
+READY → SIGMA DROP → RESULT → WORLDLINES → TRACE DETAILS
 ```
 
-The main surface shows the trace-supplied deviation from a supplied baseline. The detailed view explains the semantic events that followed.
+The main surface shows the trace-supplied deviation from a supplied baseline. The default entry point keeps developer controls secondary: one primary Sigma Drop action comes first, while example selection, step-through, and reset live under Advanced controls. The detailed view explains the semantic events that followed.
 
 > σ guides describe deviation only. Later horizontal routing is semantic layout, not probability.
 
