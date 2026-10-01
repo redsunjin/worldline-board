@@ -2,7 +2,6 @@ import{buildBoardScene}from"/src/trace-layout.mjs";
 import{buildVisualDropPath}from"/src/drop-motion.mjs";
 
 const EXAMPLES={steady:"/examples/steady.json",review:"/examples/human-review.json"};
-const COLORS={code:"#74adff",judgment:"#a47cff",policy:"#7f91ff",review:"#ff9a64",branch:"#ff5e7f"};
 const WORLDLINE_COLORS=["#74adff","#a47cff","#ff5e7f","#6fd6ff","#c98cff"];
 const DEVIATION_COLORS={normal:"#74adff",elevated:"#a47cff",high:"#ff6a7f",critical:"#ff4668",unknown:"#8ea0b8"};
 const state={trace:null,scene:null,index:-1,timer:null,motion:null,motionIndex:-1,dropComplete:false};
@@ -194,7 +193,7 @@ function inspect(i){
   const p=state.scene?.semanticPegs[i];
   if(!p){
     $("pegTitle").textContent="No semantic peg selected";
-    $("pegNote").textContent="Run the drop or select a colored peg.";
+    $("pegNote").textContent="Use Advanced controls → Step to inspect semantic events.";
     ["kind","answer","confidence","route"].forEach(id=>$(id).textContent="—");
     probabilities(null);
     return;
