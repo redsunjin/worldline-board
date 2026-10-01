@@ -196,9 +196,11 @@ Acceptance criteria:
 - semantic step order remains inspectable in Trace details;
 - no visual motion value is labeled as confidence or probability.
 
-### M2 — Landing → Result transition
+### M2 — Landing → Result transition — IMPLEMENTED
 
 Goal: make the landing itself explain the sigma result.
+
+Implementation now positions the sigma guide at the actual visual landing line, adds a trace-colored landing halo/ring, reveals a `+N.NNσ · BAND` label at the final point, and gives the Result card a short focused transition.
 
 Work:
 
@@ -277,10 +279,10 @@ Recent completed milestones on `main`:
 
 ## 10. Next work item
 
-M1 is complete once this change is merged and production verification passes.
+M1 and M2 are complete once this change is merged and production verification passes.
 
 The next implementation branch should contain **one conceptual change only**:
 
-> **M2 — Landing → Result transition**
+> **M3 — Result → Worldlines continuity**
 
-Do not combine M2 and M3. First make the landing point itself explain the trace-supplied sigma result before improving the Result → Worldlines transition.
+Do not combine M3 and M4. First make the worldline fan feel like it opens from the observed result while preserving the rule that worldlines are trace-supplied and their color does not encode probability.
