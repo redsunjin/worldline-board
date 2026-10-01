@@ -1,10 +1,11 @@
 import{buildBoardScene}from"/src/trace-layout.mjs";
+import{buildVisualDropPath}from"/src/drop-motion.mjs";
 
 const EXAMPLES={steady:"/examples/steady.json",review:"/examples/human-review.json"};
 const COLORS={code:"#74adff",judgment:"#a47cff",policy:"#7f91ff",review:"#ff9a64",branch:"#ff5e7f"};
 const WORLDLINE_COLORS=["#74adff","#a47cff","#ff5e7f","#6fd6ff","#c98cff"];
 const DEVIATION_COLORS={normal:"#74adff",elevated:"#a47cff",high:"#ff6a7f",critical:"#ff4668",unknown:"#8ea0b8"};
-const state={trace:null,scene:null,index:-1,timer:null};
+const state={trace:null,scene:null,index:-1,timer:null,motion:null,motionIndex:-1,dropComplete:false};
 const $=id=>document.getElementById(id);
 const svg=$("board");
 const worldlineSvg=$("worldlineFan");
@@ -14,6 +15,31 @@ function sceneOptions(){
   if(!window.matchMedia(MOBILE_QUERY).matches)return{};
   const measuredWidth=Math.round(svg.getBoundingClientRect().width||window.innerWidth-16);
   return{width:Math.max(320,measuredWidth),height:430};
+}
+
+function nextMotionSeed(){
+  if(globalThis.crypto?.getRandomValues){
+    const values=new Uint32Array(1);
+    globalThis.crypto.getRandomValues(values);
+    return values[0];
+  }
+  return Date.now()>>>0;
+}
+
+function prepareMotion(seed=nextMotionSeed()){
+  state.motion=buildVisualDropPath(state.scene,{seed,samplesPerSegment:3});
+  state.motionIndex=-1;
+  state.dropComplete=false;
+}
+
+function clearMotionTimer(){
+  if(state.timer)clearInterval(state.timer);
+  state.timer=null;
+}
+
+function currentMotionPoint(){
+  if(!state.motion||state.motionIndex<0)return null;
+  return state.motion.points[Math.min(state.motionIndex,state.motion.points.length-1)]||null;
 }
 
 function el(name,attrs={}){
@@ -183,14 +209,14 @@ function inspect(i){
 }
 
 function isComplete(){
-  return Boolean(state.scene&&state.index>=state.scene.semanticPegs.length-1);
+  return Boolean(state.scene&&state.dropComplete);
 }
 
 function syncExperience(){
   if(!state.scene)return;
   const complete=isComplete();
   const dropping=Boolean(state.timer);
-  const phase=state.index<0?"READY":dropping?"DROPPING":complete?"RESULT":"TRACE";
+  const phase=dropping?"DROPPING":complete?"RESULT":"READY";
   $("phase").textContent=phase;
   renderWorldlines(complete);
 
@@ -198,9 +224,9 @@ function syncExperience(){
   if(!complete){
     result.className="result-card pending";
     $("resultSigma").textContent="—";
-    $("resultBand").textContent=state.index<0?"Ready when you are":"Reading the supplied trace…";
-    $("resultMessage").textContent=state.index<0?"Start the drop to see the supplied deviation and any open worldlines.":"The result appears after the semantic trace reaches its final supplied state.";
-    $("status").textContent=state.index<0?"ready":"in progress";
+    $("resultBand").textContent=state.motionIndex<0?"Ready when you are":"Dropping through the visual field…";
+    $("resultMessage").textContent=state.motionIndex<0?"Start the drop to see the supplied deviation and any open worldlines.":"The drop path is decorative; only the final deviation target comes from the trace.";
+    $("status").textContent=state.motionIndex<0?"ready":"in motion";
     $("terminal").textContent="—";
     return;
   }
@@ -242,87 +268,100 @@ function render(){
 
   s.cosmeticPegs.forEach(p=>svg.append(el("circle",{cx:p.x,cy:p.y,r:2.3,class:"decor"})));
 
-  if(s.path.length>1){
-    const d=s.path.map((p,i)=>(i?"L ":"M ")+p.x+" "+p.y).join(" ");
-    svg.append(el("path",{d,class:"path"}));
-  }
-
-  s.semanticPegs.forEach((p,i)=>{
-    const active=i<=state.index;
-    const halo=el("circle",{cx:p.x,cy:p.y,r:active?18:13,class:"halo",stroke:COLORS[p.kind]||"#fff"});
-    halo.style.opacity=active?".22":".06";
-    svg.append(halo);
-
-    const dot=el("circle",{cx:p.x,cy:p.y,r:active?9:6,class:"semantic "+p.kind});
-    dot.style.opacity=active?"1":".38";
-    dot.style.cursor="pointer";
-    dot.addEventListener("click",()=>{
-      state.index=i;
-      inspect(i);
-      syncExperience();
-      render();
-    });
-    svg.append(dot);
-
-    const label=el("text",{x:p.x+14,y:p.y-11,class:"peg-label"});
-    label.textContent=p.sequence+". "+p.kindLabel;
-    label.style.opacity=active?"1":".32";
-    svg.append(label);
-  });
-
-  if(state.index>=0){
-    const p=s.semanticPegs[state.index];
-    svg.append(el("circle",{cx:p.x,cy:p.y,r:7,class:"ball"}));
+  if(state.motion&&state.motionIndex>=0){
+    const visiblePoints=state.motion.points.slice(0,state.motionIndex+1);
+    if(visiblePoints.length>1){
+      const d=visiblePoints.map((p,i)=>(i?"L ":"M ")+p.x+" "+p.y).join(" ");
+      svg.append(el("path",{d,class:"drop-trail"}));
+    }
+    const p=currentMotionPoint();
+    if(p)svg.append(el("circle",{cx:p.x,cy:p.y,r:7,class:"ball"}));
   }
 }
 
-function stop(){
-  if(state.timer)clearInterval(state.timer);
-  state.timer=null;
-  $("play").textContent="▶ Start Sigma Drop";
+function pauseMotion(){
+  clearMotionTimer();
+  $("play").textContent=state.dropComplete?"▶ Start Sigma Drop":"▶ Resume Sigma Drop";
   syncExperience();
 }
 
-function reset(){
-  stop();
-  state.index=-1;
-  inspect(-1);
+function finishMotion(){
+  clearMotionTimer();
+  if(state.motion){
+    state.motionIndex=state.motion.points.length-1;
+  }
+  state.dropComplete=true;
+  $("play").textContent="▶ Start Sigma Drop";
   syncExperience();
   render();
 }
 
+function advanceMotion(){
+  if(!state.motion)return;
+  state.motionIndex++;
+  if(state.motionIndex>=state.motion.points.length-1){
+    finishMotion();
+    return;
+  }
+  syncExperience();
+  render();
+}
+
+function startMotion({fresh=false}={}){
+  if(fresh||!state.motion||state.dropComplete)prepareMotion();
+  clearMotionTimer();
+  $("play").textContent="⏸ Pause";
+  state.timer=setInterval(advanceMotion,70);
+  advanceMotion();
+}
+
+function reset(){
+  clearMotionTimer();
+  state.index=-1;
+  state.motion=null;
+  state.motionIndex=-1;
+  state.dropComplete=false;
+  inspect(-1);
+  syncExperience();
+  render();
+  $("play").textContent="▶ Start Sigma Drop";
+}
+
 function step(){
+  if(state.timer)pauseMotion();
   const max=state.scene.semanticPegs.length-1;
   if(state.index>=max)state.index=-1;
   state.index++;
   inspect(state.index);
-  syncExperience();
-  render();
-  if(state.index>=max)stop();
 }
 
 function play(){
-  reset();
-  $("play").textContent="⏸ Pause";
-  step();
-  state.timer=setInterval(step,650);
-  syncExperience();
+  if(state.timer){
+    pauseMotion();
+    return;
+  }
+  const fresh=state.dropComplete||!state.motion||state.motionIndex<0;
+  startMotion({fresh});
 }
 
 async function load(key){
-  stop();
+  clearMotionTimer();
   const r=await fetch(EXAMPLES[key]);
   state.trace=await r.json();
   state.scene=buildBoardScene(state.trace,sceneOptions());
   state.index=-1;
+  state.motion=null;
+  state.motionIndex=-1;
+  state.dropComplete=false;
   $("title").textContent=state.trace.title||state.trace.traceId;
+  $("play").textContent="▶ Start Sigma Drop";
   inspect(-1);
   syncExperience();
   render();
 }
 
 $("example").addEventListener("change",e=>load(e.target.value));
-$("play").addEventListener("click",()=>state.timer?stop():play());
+$("play").addEventListener("click",play);
 $("step").addEventListener("click",()=>{stop();step()});
 $("reset").addEventListener("click",reset);
 
@@ -333,8 +372,18 @@ window.addEventListener("resize",()=>{
     resizeFrame=null;
     if(!state.trace)return;
     const currentIndex=state.index;
+    const oldMotion=state.motion;
+    const oldProgress=oldMotion&&oldMotion.points.length>1
+      ?Math.max(0,state.motionIndex)/(oldMotion.points.length-1)
+      :0;
     state.scene=buildBoardScene(state.trace,sceneOptions());
     state.index=currentIndex<0?-1:Math.min(currentIndex,state.scene.semanticPegs.length-1);
+    if(oldMotion){
+      state.motion=buildVisualDropPath(state.scene,{seed:oldMotion.seed,samplesPerSegment:3});
+      state.motionIndex=state.dropComplete
+        ?state.motion.points.length-1
+        :Math.min(state.motion.points.length-1,Math.round(oldProgress*(state.motion.points.length-1)));
+    }
     syncExperience();
     render();
   });
