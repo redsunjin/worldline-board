@@ -232,7 +232,7 @@ function syncExperience(){
 
   const d=state.scene.deviation;
   const copy=resultCopy(d);
-  result.className="result-card "+copy.tone;
+  result.className="result-card "+copy.tone+" revealed";
   $("resultSigma").textContent=d?sigmaLabel(d.value):"—";
   $("resultBand").textContent=copy.title;
   $("resultMessage").textContent=copy.message;
@@ -240,22 +240,61 @@ function syncExperience(){
   $("terminal").textContent=state.trace.terminalScenario||"human review";
 }
 
+function landingYForScene(s){
+  if(state.motion?.landingY)return state.motion.landingY;
+  return Math.max(90,s.height-Math.min(54,s.height*.09));
+}
+
 function drawSigmaScale(s){
   if(s.deviationIndex<0)return;
-  const peg=s.semanticPegs[s.deviationIndex];
-  const top=Math.max(34,peg.y-56);
-  const bottom=Math.min(s.height-42,peg.y+58);
+  const landingY=landingYForScene(s);
+  const top=Math.max(34,landingY-54);
+  const bottom=Math.min(s.height-18,landingY+18);
 
-  const tag=el("text",{x:44,y:top-12,class:"scale-title"});
-  tag.textContent="DEVIATION SCALE";
+  const left=s.sigmaGuides.at(0)?.x??58;
+  const right=s.sigmaGuides.at(-1)?.x??(s.width-58);
+  svg.append(el("line",{x1:left,x2:right,y1:landingY,y2:landingY,class:"landing-axis"}));
+
+  const tag=el("text",{x:44,y:top-10,class:"scale-title"});
+  tag.textContent="DEVIATION LANDING";
   svg.append(tag);
 
   s.sigmaGuides.forEach(g=>{
     svg.append(el("line",{x1:g.x,x2:g.x,y1:top,y2:bottom,class:"guide"}));
-    const t=el("text",{x:g.x,y:bottom+17,"text-anchor":"middle",class:"guide-label"});
+    const t=el("text",{x:g.x,y:Math.min(s.height-5,bottom+15),"text-anchor":"middle",class:"guide-label"});
     t.textContent=g.value===0?"μ":(g.value>0?"+":"")+g.value+"σ";
     svg.append(t);
   });
+}
+
+function drawLandingResult(s){
+  if(!state.dropComplete||!state.motion)return;
+  const p=state.motion.points.at(-1);
+  if(!p)return;
+
+  const deviation=s.deviation;
+  const tone=deviation?.band||"unknown";
+  const color=DEVIATION_COLORS[tone]||DEVIATION_COLORS.unknown;
+
+  const halo=el("circle",{cx:p.x,cy:p.y,r:23,class:"landing-halo"});
+  halo.setAttribute("stroke",color);
+  svg.append(halo);
+
+  const ring=el("circle",{cx:p.x,cy:p.y,r:11,class:"landing-ring"});
+  ring.setAttribute("stroke",color);
+  svg.append(ring);
+
+  if(deviation){
+    const label=el("text",{
+      x:p.x,
+      y:Math.max(24,p.y-34),
+      "text-anchor":"middle",
+      class:"landing-label"
+    });
+    label.setAttribute("fill",color);
+    label.textContent=sigmaLabel(deviation.value)+" · "+String(deviation.band||"unknown").toUpperCase();
+    svg.append(label);
+  }
 }
 
 function render(){
@@ -276,6 +315,8 @@ function render(){
     const p=currentMotionPoint();
     if(p)svg.append(el("circle",{cx:p.x,cy:p.y,r:7,class:"ball"}));
   }
+
+  drawLandingResult(s);
 }
 
 function pauseMotion(){
