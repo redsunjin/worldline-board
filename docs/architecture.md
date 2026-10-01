@@ -12,21 +12,33 @@ Worldline Board
 
 The public repository does not decide which branch is correct.
 
-Semantic steps may be `code`, `judgment`, `policy`, `review`, or `branch`. Only these trace steps become large semantic pegs.
+Semantic steps may be `code`, `judgment`, `policy`, `review`, or `branch`. They remain structured renderer data for Trace details and explanation.
 
-Small Galton-style filler pegs are decorative. They are never model calls or workflow decisions.
+The main Galton surface does **not** render semantic steps as physical collision pegs. Small Galton-style pegs and the ball route are decorative visual motion only.
 
 ## Experience semantics
 
 The default public experience is result-first:
 
 ```text
-READY → SIGMA DROP → RESULT → TRACE DETAILS
+READY → SIGMA DROP → RESULT → WORLDLINES → TRACE DETAILS
 ```
 
 The main surface answers one question first: **how far is the supplied observation from its supplied baseline?**
 
 The detailed semantic workflow remains available under **Trace details** for explanation and debugging.
+
+### Visual motion
+
+Visual motion and semantic trace are separate layers.
+
+- the drop route is generated from decorative Galton pegs;
+- route variation may change between runs;
+- the final landing x-coordinate is constrained by the trace-supplied deviation;
+- the route does not represent judgment, policy, confidence, probability, or worldline selection;
+- semantic step order remains inspectable under Trace details.
+
+For deterministic tests the motion generator accepts an injectable seed. The generated motion is renderer-only state and is never written into `BoardTrace`.
 
 ### Sigma axis
 

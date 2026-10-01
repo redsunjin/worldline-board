@@ -63,14 +63,10 @@
 
       <div class="stage">
         <svg id="board" role="img" aria-label="Decision trace visualizer"></svg>
-        <div class="legend" aria-label="Semantic peg legend">
-          <span class="code">Code</span>
-          <span class="judgment">Judgment</span>
-          <span class="policy">Policy</span>
-          <span class="review">Human</span>
-          <span class="branch">Branch</span>
+        <div class="legend" aria-label="Visual motion note">
+          <span>Visual drop · decorative route</span>
         </div>
-        <p class="scale-note">σ guides describe supplied deviation only. Later horizontal movement is semantic routing, not probability.</p>
+        <p class="scale-note">The drop route is decorative. Its landing x-position comes from the trace-supplied deviation; the route does not encode workflow or probability.</p>
       </div>
 
       <section id="result" class="result-card pending" aria-live="polite">
@@ -111,7 +107,7 @@
       <aside class="inspector">
         <p class="eyebrow">SEMANTIC PEG</p>
         <h2 id="pegTitle">No semantic peg selected</h2>
-        <p id="pegNote" class="muted">Run the drop or select a colored peg.</p>
+        <p id="pegNote" class="muted">Use Advanced controls → Step to inspect semantic events.</p>
         <dl>
           <div><dt>Kind</dt><dd id="kind">—</dd></div>
           <div><dt>Answer</dt><dd id="answer">—</dd></div>
@@ -125,8 +121,8 @@
           <p>Confidence and distributions are trace-supplied judgment evidence. They do not claim the objective probability of a future event.</p>
         </div>
         <div class="callout">
-          <strong>Visual peg ≠ model call</strong>
-          <p>Small gray pegs are decorative. Only large colored pegs are semantic events supplied by the trace.</p>
+          <strong>Visual motion ≠ semantic trace</strong>
+          <p>The gray pegs and the ball route are decorative. Judgment, policy, review, and branch events remain in this trace detail layer.</p>
         </div>
       </aside>
     </details>

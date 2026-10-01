@@ -135,6 +135,7 @@ dd{margin:0;text-align:right;overflow-wrap:anywhere}
 .semantic.branch{fill:var(--branch)}
 .halo{fill:none;stroke-width:8}
 .path{fill:none;stroke:rgba(139,171,255,.66);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:7 8}
+.drop-trail{fill:none;stroke:rgba(116,173,255,.32);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:3 8}
 .ball{fill:#fff;stroke:var(--blue);stroke-width:3;filter:drop-shadow(0 0 15px rgba(116,173,255,.9))}
 .peg-label{fill:rgba(236,242,253,.84);font-size:10px;font-weight:700}
 .guide{stroke:rgba(216,228,246,.15);stroke-width:1}

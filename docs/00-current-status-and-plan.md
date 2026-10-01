@@ -1,7 +1,7 @@
 # Worldline Board — Current Status & Next Plan
 
-Last updated: 2026-09-25  
-Baseline: `main@04d9b7db8a4a24ef6ba893186cefa4b833c3e5f1`
+Last updated: 2026-10-01  
+Baseline entering M1: `main@b417daebaec23be555b423bc71c9d936ee3dee0a`
 
 This document is the current planning baseline for the public **Worldline Board** repository.
 
@@ -174,9 +174,11 @@ They should not feel:
 
 ## 6. Next implementation plan
 
-### M1 — Separate drop motion from semantic trace
+### M1 — Separate drop motion from semantic trace — IMPLEMENTED
 
 Goal: remove semantic peg-to-peg movement from the main Sigma Drop animation.
+
+Implementation now uses a dedicated seeded visual-drop generator. The public canvas follows decorative Galton motion and converges on the trace-supplied deviation target. Semantic steps remain available for Advanced Step / Trace details but are no longer drawn as the physical ball route.
 
 Work:
 
@@ -275,10 +277,10 @@ Recent completed milestones on `main`:
 
 ## 10. Next work item
 
+M1 is complete once this change is merged and production verification passes.
+
 The next implementation branch should contain **one conceptual change only**:
 
-> **M1 — Visual Motion ≠ Semantic Trace**
+> **M2 — Landing → Result transition**
 
-Do not start M2/M3 redesign at the same time.
-
-First prove that the ball can visually fall through the Galton field without following the semantic workflow, while still landing exactly on the trace-supplied deviation.
+Do not combine M2 and M3. First make the landing point itself explain the trace-supplied sigma result before improving the Result → Worldlines transition.

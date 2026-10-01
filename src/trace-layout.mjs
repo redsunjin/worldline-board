@@ -85,6 +85,7 @@ export function buildBoardScene(trace,{width=760,height=760,rows=12}={}){
 
   const deviationIndex=trace.steps.findIndex(s=>s.summary?.deviation&&Number.isFinite(s.summary.deviation.value));
   const deviation=deviationIndex>=0?trace.steps[deviationIndex].summary.deviation:null;
+  const deviationTargetX=deviation?sigmaX(deviation.value,{width,marginX}):null;
   const sigmaGuides=SIGMA_VALUES.map(value=>({value,x:sigmaX(value,{width,marginX})}));
 
   return {
@@ -95,6 +96,7 @@ export function buildBoardScene(trace,{width=760,height=760,rows=12}={}){
     path:semanticPegs.map(p=>({x:p.x,y:p.y,nodeId:p.nodeId})),
     deviation,
     deviationIndex,
+    deviationTargetX,
     sigmaGuides,
     worldlines:Array.isArray(trace.worldlines)?trace.worldlines:[],
     status:trace.status,
