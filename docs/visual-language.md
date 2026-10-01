@@ -69,3 +69,14 @@ Default hierarchy:
 4. keep example selection, step-through, and reset under **Advanced controls**.
 
 Do not remove the developer controls; demote them. The public default should make the purpose understandable before exposing workflow mechanics.
+
+
+## Landing emphasis
+
+The landing moment is the strongest bridge between the Galton metaphor and the actual result.
+
+- keep the μ / ±σ scale visually local to the landing line;
+- reveal the supplied deviation label only when the ball reaches its final point;
+- color the landing halo from the existing deviation tone;
+- use a short Result-card emphasis rather than a large modal or separate result screen;
+- never add synthetic histogram bars or imply that glow intensity is probability.
