@@ -216,7 +216,7 @@ function syncExperience(){
   if(!state.scene)return;
   const complete=isComplete();
   const dropping=Boolean(state.timer);
-  const phase=dropping?"DROPPING":complete?"RESULT":"READY";
+  const phase=dropping?"DROPPING":complete?"RESULT":state.motionIndex>=0?"PAUSED":"READY";
   $("phase").textContent=phase;
   renderWorldlines(complete);
 
@@ -362,7 +362,7 @@ async function load(key){
 
 $("example").addEventListener("change",e=>load(e.target.value));
 $("play").addEventListener("click",play);
-$("step").addEventListener("click",()=>{stop();step()});
+$("step").addEventListener("click",step);
 $("reset").addEventListener("click",reset);
 
 let resizeFrame=null;
