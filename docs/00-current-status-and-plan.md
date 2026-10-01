@@ -92,23 +92,13 @@ The visual direction follows the original dark-navy Sigma Drop concept with rest
 - Orientation / resize relayout is supported.
 - Worldline supporting cards swipe horizontally instead of creating a long vertical stack.
 
-## 3. Important problem still unresolved
+## 3. Resolved conceptual debt
 
-The main conceptual problem is now clear:
+M1 resolved the earlier structural problem where the moving ball followed the semantic trace.
 
-> **The moving ball still follows the semantic trace.**
+The public canvas now uses a renderer-only decorative route and converges on the trace-supplied deviation target. Judgment, policy, review, and branch events remain semantic data for Trace details instead of becoming physical Galton collisions.
 
-Current implementation draws the semantic path and advances the ball from semantic peg to semantic peg.
-
-That creates three incorrect impressions:
-
-1. the route was physically predetermined;
-2. Galton collisions are equivalent to judgment/workflow decisions;
-3. the ball's left/right movement has semantic or probabilistic meaning.
-
-This conflicts with the intended Worldline metaphor.
-
-The public experience should not be a workflow-player disguised as a Galton Board.
+The remaining UX debt entering M2 was different: the landing point and the sigma result were spatially disconnected. M2 addresses that by moving the visible sigma scale to the landing line and revealing the supplied deviation directly at the final point.
 
 ## 4. New design decision
 
