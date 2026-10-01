@@ -48,6 +48,17 @@ A deviation peg and the visible sigma guides use the same renderer scale. Horizo
 
 Worldline Board does not synthesize a historical distribution, histogram, baseline window, or sample count when those values are absent from `BoardTrace`.
 
+### Landing result
+
+The visual landing line is the local sigma scale for the public interaction. When the drop completes:
+
+- the final x-coordinate stays equal to the trace-supplied deviation target;
+- the landing point receives a visual halo/ring;
+- the public canvas may display the supplied deviation value and band next to the landing point;
+- the Result card may animate to connect the landing moment to its textual explanation.
+
+The landing emphasis does not add a histogram, infer a distribution, or create new evidence.
+
 ### Judgment evidence
 
 Judgment confidence/probability may be displayed only as evidence supplied by the trace. It is shown in the detailed view rather than as the main result.
