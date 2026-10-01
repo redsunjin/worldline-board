@@ -14,6 +14,8 @@ The main surface shows the trace-supplied deviation from a supplied baseline. Th
 
 > Visual peg ≠ model call. Only semantic trace events are decisions.
 
+> Visual drop route ≠ semantic trace. The route is decorative; only its final deviation landing target is trace-supplied.
+
 ## Current status and next plan
 
 The canonical working baseline is [`docs/00-current-status-and-plan.md`](docs/00-current-status-and-plan.md).
