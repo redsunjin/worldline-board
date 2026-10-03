@@ -204,9 +204,11 @@ Acceptance criteria:
 - user can identify the final deviation without opening Trace details;
 - no fabricated histogram or historical distribution appears.
 
-### M3 — Result → Worldlines continuity
+### M3 — Result → Worldlines continuity — IMPLEMENTED
 
 Goal: make possible worldlines feel like they open from the observed state.
+
+Implementation now visually bridges the Result card into the worldline fan, labels the fan origin from the supplied deviation, and reveals trace-supplied paths/cards in sequence. The sequence is presentation only and does not rank or score the paths.
 
 Work:
 
@@ -269,10 +271,10 @@ Recent completed milestones on `main`:
 
 ## 10. Next work item
 
-M1 and M2 are complete once this change is merged and production verification passes.
+M1, M2, and M3 are complete once this change is merged and production verification passes.
 
 The next implementation branch should contain **one conceptual change only**:
 
-> **M3 — Result → Worldlines continuity**
+> **M4 — Trace details repositioning**
 
-Do not combine M3 and M4. First make the worldline fan feel like it opens from the observed result while preserving the rule that worldlines are trace-supplied and their color does not encode probability.
+Do not add new Engine behavior. Keep explainability available while ensuring the public experience stays focused on Drop → Result → Worldlines.

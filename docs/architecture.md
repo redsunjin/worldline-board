@@ -59,6 +59,15 @@ The visual landing line is the local sigma scale for the public interaction. Whe
 
 The landing emphasis does not add a histogram, infer a distribution, or create new evidence.
 
+### Result to worldlines continuity
+
+When trace-supplied worldlines exist, the public renderer may visually connect the Result surface to the worldline fan.
+
+- the fan origin may be labeled with the supplied deviation;
+- path/card reveal order is animation timing only;
+- reveal order, color, thickness, and position do not rank worldlines or encode likelihood;
+- no fan is shown when `worldlines[]` is absent.
+
 ### Judgment evidence
 
 Judgment confidence/probability may be displayed only as evidence supplied by the trace. It is shown in the detailed view rather than as the main result.

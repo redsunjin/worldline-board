@@ -80,3 +80,14 @@ The landing moment is the strongest bridge between the Galton metaphor and the a
 - color the landing halo from the existing deviation tone;
 - use a short Result-card emphasis rather than a large modal or separate result screen;
 - never add synthetic histogram bars or imply that glow intensity is probability.
+
+
+## Result to worldlines
+
+Treat the Result and Worldlines surfaces as one continuous story.
+
+- use a quiet center bridge from Result to the fan;
+- label the fan origin from the supplied deviation when available;
+- reveal paths first, then supporting cards with a short stagger;
+- keep all branches visually peer-like unless the trace explicitly marks a state such as active or paused;
+- reveal timing, hue, position, and glow must never imply numeric likelihood.
