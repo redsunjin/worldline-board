@@ -87,6 +87,11 @@ function drawWorldlineFan(worldlines){
   const deviation=state.scene?.deviation;
   const startColor=DEVIATION_COLORS[deviation?.band]||DEVIATION_COLORS.unknown;
 
+  const originLabel=el("text",{x:start.x,y:17,"text-anchor":"middle",class:"worldline-origin-label"});
+  originLabel.textContent=deviation?("FROM "+sigmaLabel(deviation.value)):"FROM RESULT";
+  originLabel.setAttribute("fill",startColor);
+  worldlineSvg.append(originLabel);
+
   const startHalo=el("circle",{cx:start.x,cy:start.y,r:18,class:"worldline-start-halo"});
   startHalo.setAttribute("stroke",startColor);
   worldlineSvg.append(startHalo);
@@ -104,6 +109,7 @@ function drawWorldlineFan(worldlines){
       d:"M "+start.x+" "+(start.y+9)+" C "+start.x+" 92, "+x+" 118, "+x+" "+(y-13),
       class:"worldline-path"
     });
+    path.style.setProperty("--worldline-order",index);
     path.setAttribute("stroke",color);
     path.style.opacity=worldline.state==="closed"?".28":".9";
     worldlineSvg.append(path);
@@ -126,6 +132,7 @@ function renderWorldlines(complete){
   const worldlines=state.scene?.worldlines||[];
   const visible=complete&&worldlines.length>0;
   section.hidden=!visible;
+  section.classList.toggle("revealed",visible);
 
   if(!visible){
     worldlineSvg.replaceChildren();
@@ -141,6 +148,7 @@ function renderWorldlines(complete){
     const card=document.createElement("article");
     card.className="worldline-card "+worldline.state;
     card.style.setProperty("--worldline-color",color);
+    card.style.setProperty("--worldline-order",index);
 
     const top=document.createElement("div");
     top.className="worldline-card-top";
