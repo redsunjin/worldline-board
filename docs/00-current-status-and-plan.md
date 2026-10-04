@@ -20,15 +20,18 @@ This document is the current planning baseline for the public **Worldline Board*
 
 ## 미검증
 
-- The combined **Drop → Result → Worldlines** flow has not been freshly exercised in a desktop/mobile browser as part of this status alignment.
-- Pause/resume, repeated runs, reset, example switching, resize/orientation changes, and the final appearance of each worldline state still need recorded browser evidence.
-- The source commit's Vercel status reports success, but that status alone does not establish which production URL was inspected or prove production UX acceptance.
-- **Fresh execution in this documentation change:** no local `npm run ci` or browser/production test was run. The CI result above is an existing run whose logs were re-read on 2026-10-04. Any CI triggered by this documentation PR is separate evidence.
-- M4 is deferred. Merged M1–M3 implementation must not be relabeled as end-to-end verified until the acceptance record below exists.
+- Partial fresh evidence is recorded in [M1–M3 verification](verification/m1-m3-evidence.md): local CI passes and public desktop checks are observed, but mobile/fixture cases and exact deployment mapping remain open. This does not satisfy the complete browser acceptance gate.
+
+- Public desktop Chrome (1180×757) freshly exercised steady and human-review Drop → Result → Worldlines, pause/resume, repeated runs, reset, example switching and Advanced Step / Trace details. See the linked record for exact observations and screenshots.
+- The complete browser gate remains open: specified 1280×900 desktop, mobile/landscape, resize/orientation, missing-data and closed-worldline fixtures, navigation/interrupted loading, and exact deployed SHA mapping are not yet verified.
+- Fresh local `npm run ci` on `77033837bcfe4e034a71bf0da301064763ea2b18` passed: boundary 7 files, 32/32 tests, Node 24.19.0. This does not replace browser acceptance; remote Node 22 CI is recorded separately in the verification PR.
+- The public URL was inspected, but its exact source SHA was not established. A Vercel success status alone does not prove version mapping or production UX acceptance.
+- Public interrupted-load testing exposed a Start/example-switch race. A minimal candidate repair and 5 lifecycle regression cases are included in the evidence PR (37/37 tests); final browser regression remains open. This is not M4.
+- M4 stays deferred until the remaining evidence is completed and a person reviews it. Partial desktop evidence must not be relabeled complete end-to-end acceptance.
 
 ## 다음 작업 1개
 
-**Verify and record the merged M1–M3 Drop → Result → Worldlines flow before starting M4.**
+**Complete the remaining M1–M3 browser verification gaps, then obtain human review before starting M4.**
 
 Acceptance criteria for this one verification task:
 
