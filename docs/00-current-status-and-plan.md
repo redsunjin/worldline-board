@@ -1,9 +1,51 @@
 # Worldline Board — Current Status & Next Plan
 
-Last updated: 2026-10-01  
-Baseline entering M1: `main@b417daebaec23be555b423bc71c9d936ee3dee0a`
+Last updated: 2026-10-04 (UTC)  
+Source baseline: [`main@bc2a8eec8bc83aac5e276fdd76df7164cf537421`](https://github.com/redsunjin/worldline-board/commit/bc2a8eec8bc83aac5e276fdd76df7164cf537421), rechecked on 2026-10-04  
+Historical baseline entering M1: `main@b417daebaec23be555b423bc71c9d936ee3dee0a`
 
 This document is the current planning baseline for the public **Worldline Board** repository.
+
+
+## 완료
+
+**Implementation is merged; browser/production acceptance remains separate.**
+
+- M1, decorative motion separated from semantic trace: [PR #7](https://github.com/redsunjin/worldline-board/pull/7), merged.
+- M2, Landing → Result transition: [PR #8](https://github.com/redsunjin/worldline-board/pull/8), merged.
+- M3, Result → Worldlines continuity: [PR #9](https://github.com/redsunjin/worldline-board/pull/9), merged on 2026-10-03. The source baseline above is its merge commit.
+- **Code inspection (2026-10-04):** `src/drop-motion.mjs` generates renderer-only seeded motion; `app.js` uses the supplied deviation at landing and displays the fan only after completion when trace-supplied worldlines exist. This is source evidence, not a browser test.
+- **Stored execution evidence:** [quality run 37091141306](https://github.com/redsunjin/worldline-board/actions/runs/37091141306), on the exact source baseline, passed on 2026-10-03. Its `npm run ci` log records the public-boundary check passing (7 files scanned) and **32 tests passed, 0 failed** on Node 22.
+- **Saved test coverage:** `tests/drop-motion.test.mjs` and `tests/trace-layout.test.mjs` exercise motion/layout behavior. Landing, worldline, mobile, READY, and motion-separation contract tests also inspect source text. Those checks do not render the browser or establish visual acceptance.
+
+## 미검증
+
+- The combined **Drop → Result → Worldlines** flow has not been freshly exercised in a desktop/mobile browser as part of this status alignment.
+- Pause/resume, repeated runs, reset, example switching, resize/orientation changes, and the final appearance of each worldline state still need recorded browser evidence.
+- The source commit's Vercel status reports success, but that status alone does not establish which production URL was inspected or prove production UX acceptance.
+- **Fresh execution in this documentation change:** no local `npm run ci` or browser/production test was run. The CI result above is an existing run whose logs were re-read on 2026-10-04. Any CI triggered by this documentation PR is separate evidence.
+- M4 is deferred. Merged M1–M3 implementation must not be relabeled as end-to-end verified until the acceptance record below exists.
+
+## 다음 작업 1개
+
+**Verify and record the merged M1–M3 Drop → Result → Worldlines flow before starting M4.**
+
+Acceptance criteria for this one verification task:
+
+- Record the tested commit, date, URL/environment, browser, desktop viewport, and mobile viewport. If testing a deployment, establish its commit; report any unknown mapping.
+- Run `npm run ci` against that checkout and attach the result separately from browser observations.
+- Exercise `examples/steady.json` and `examples/human-review.json`; use sanitized test fixtures for missing deviation and missing `worldlines[]` cases. Do not publish fixtures or alter production data for this check.
+- Confirm decorative route variation preserves the supplied final sigma target; the landing label and Result agree with the trace on desktop and mobile.
+- Confirm supplied worldlines appear only after Result, retain their supplied states, and are not synthesized when absent. A review-required trace must not auto-select a terminal future.
+- Confirm no deviation is fabricated when absent, and that animation order, hue, glow, width, and position introduce no probability/ranking claim.
+- Check pause/resume, repeated Start, Reset, example switching, and resize/orientation during and after a drop for stale results, duplicate motion, or misaligned geometry. Keep Advanced Step / Trace details inspectable.
+- Save concise pass/fail observations and screenshots (or reproduction steps for failures) in the verification PR, then sync this baseline. Only after review of that evidence may **M4 — Trace details repositioning** become the next implementation item.
+
+The verification task does not authorize a new deployment, merge, Engine change, or M4 implementation.
+
+## Reference: scope and implementation record
+
+The sections below preserve product decisions and implementation history. “Implemented” means present in the source baseline; verification status is defined above.
 
 ## 1. Product boundary
 
@@ -29,7 +71,7 @@ It must not contain:
 
 `worldline-engine` remains the runtime / judgment source of truth.
 
-## 2. What is already complete
+## 2. Implemented renderer capabilities
 
 ### Renderer and contract
 
@@ -100,11 +142,11 @@ The public canvas now uses a renderer-only decorative route and converges on the
 
 The remaining UX debt entering M2 was different: the landing point and the sigma result were spatially disconnected. M2 addresses that by moving the visible sigma scale to the landing line and revealing the supplied deviation directly at the final point.
 
-## 4. New design decision
+## 4. Established design decision
 
 ### Visual Motion ≠ Semantic Trace
 
-From this baseline onward:
+The implementation preserves this rule:
 
 **The visual drop path and the semantic execution trace are separate layers.**
 
@@ -137,7 +179,7 @@ Those details belong in **Trace details** and explanatory layers, not in the bal
 
 ## 5. Target public experience
 
-The next target interaction is:
+The interaction to verify is:
 
 ```text
 READY
@@ -162,7 +204,7 @@ They should not feel:
 
 > “The engine predicted a fixed future and the ball replayed that path.”
 
-## 6. Next implementation plan
+## 6. Milestone implementation record
 
 ### M1 — Separate drop motion from semantic trace — IMPLEMENTED
 
@@ -223,7 +265,9 @@ Acceptance criteria:
 - Human Review can keep multiple paths visually open/paused;
 - active/open styling does not imply a numeric future probability.
 
-### M4 — Trace details repositioning
+### M4 — Trace details repositioning — DEFERRED
+
+Gate: review the M1–M3 verification evidence before writing the M4 implementation spec.
 
 Goal: keep explainability without turning the main screen back into a debugger.
 
@@ -233,9 +277,9 @@ Work:
 - optionally add a compact semantic timeline there;
 - remove any remaining main-canvas visual that implies semantic pegs are physical Galton collisions.
 
-## 7. Test strategy for the next phase
+## 7. Regression requirements
 
-Required tests:
+Preserve these requirements when verifying the baseline and when later implementing M4:
 
 - same deviation always lands on the same sigma target;
 - visual route can vary without changing semantic output;
@@ -247,7 +291,7 @@ Required tests:
 
 For deterministic CI, visual variation should be testable through an injectable seed or motion source even if production runs appear different to users.
 
-## 8. Explicit non-goals for the next phase
+## 8. Explicit non-goals
 
 Do not add:
 
@@ -268,13 +312,20 @@ Recent completed milestones on `main`:
 - PR #3 — compact mobile visual flow
 - PR #4 — explicit mobile SVG height / geometry fix
 - PR #5 — user-first READY experience
+- PR #6 — canonical baseline and motion/meaning plan
+- PR #7 — M1 decorative motion / semantic trace separation
+- PR #8 — M2 Landing → Result transition
+- PR #9 — M3 Result → Worldlines continuity
 
-## 10. Next work item
+## 10. Working loop and status synchronization
 
-M1, M2, and M3 are complete once this change is merged and production verification passes.
+Follow **requirements → spec → branch → test → review → sync**:
 
-The next implementation branch should contain **one conceptual change only**:
+1. **Requirements:** select the one next task above and preserve the public/private boundary.
+2. **Spec:** record scope, non-goals, fixtures, acceptance criteria, and required evidence before implementation.
+3. **Branch:** create one focused branch from the verified `main` baseline; keep unrelated conceptual changes separate.
+4. **Test:** record the exact commit and distinguish code inspection, saved test/run evidence, and fresh execution. Report passed, failed, and not-run checks separately.
+5. **Review:** open a draft PR with the evidence and any gaps. A review request does not grant merge or deployment approval.
+6. **Sync:** after an authorized change or reviewed verification result, update this canonical document and the README pointer together: 완료 / 미검증 / 다음 작업 1개.
 
-> **M4 — Trace details repositioning**
-
-Do not add new Engine behavior. Keep explainability available while ensuring the public experience stays focused on Drop → Result → Worldlines.
+M4 remains the later implementation candidate, not a second active next task. Do not add new Engine behavior.
