@@ -20,7 +20,7 @@ The main surface shows the trace-supplied deviation from a supplied baseline. Th
 
 The canonical working baseline is [`docs/00-current-status-and-plan.md`](docs/00-current-status-and-plan.md).
 
-It records completed milestones, current conceptual debt, and the next work item: **Visual Motion ≠ Semantic Trace**.
+It separates **완료 / 미검증 / 다음 작업 1개**. M1–M3 are merged; the next task is to verify and record the desktop/mobile **Drop → Result → Worldlines** flow before starting M4 (Trace details repositioning).
 
 ## What this repository is
 
