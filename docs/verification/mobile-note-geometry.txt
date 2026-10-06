@@ -1,0 +1,20 @@
+### Result
+[{"width":320,"noteTop":1029.5625,"labelBottom":1004.2784423828125,"svgHeight":430,"sigma":"+0.45σ"},{"width":360,"noteTop":1008.03125,"labelBottom":1004.3312377929688,"svgHeight":430,"sigma":"+0.45σ"},{"width":390,"noteTop":993.984375,"labelBottom":990.2843627929688,"svgHeight":430,"sigma":"+0.45σ"},{"width":430,"noteTop":997.34375,"labelBottom":993.6437377929688,"svgHeight":430,"sigma":"+0.45σ"},{"width":720,"noteTop":961.109375,"labelBottom":957.4093627929688,"svgHeight":430,"sigma":"+0.45σ"},{"width":844,"noteTop":1333.890625,"labelBottom":1313.81298828125,"svgHeight":799,"sigma":"+0.45σ"},{"width":1280,"noteTop":1606.203125,"labelBottom":1580.5216064453125,"svgHeight":1038,"sigma":"+0.45σ"}]
+### Ran Playwright code
+```js
+await (// playwright-cli run-code --filename=scripts/mobile-note-regression.cjs
+async page => {
+ const results=[];
+ for(const width of [320,360,390,430,720,844,1280]){
+  await page.setViewportSize({width,height:width===844?390:844});await page.goto('http://127.0.0.1:4187/');await page.waitForFunction(()=>!document.querySelector('#play').disabled);await page.locator('#play').click();await page.waitForFunction(()=>document.querySelector('#phase').textContent==='RESULT');
+  const g=await page.evaluate(()=>({noteTop:document.querySelector('.scale-note').getBoundingClientRect().top,labelBottom:Math.max(...[...document.querySelectorAll('.guide-label')].map(e=>e.getBoundingClientRect().bottom)),svgHeight:document.querySelector('#board').getBoundingClientRect().height,sigma:document.querySelector('#resultSigma').textContent}));
+  if(g.noteTop<g.labelBottom || (width<=720&&g.svgHeight!==430))throw new Error(JSON.stringify({width,...g}));
+  await page.locator('#result').scrollIntoViewIfNeeded();await page.screenshot({path:'output/playwright/fixed-'+width+'.png'});results.push({width,...g});
+ }
+ return results;
+}
+)(page);
+```
+### Page
+- Page URL: http://127.0.0.1:4187/
+- Page Title: Worldline Board

@@ -62,3 +62,7 @@ Candidate repair in `app.js`: disable/guard motion, Step and Reset while loading
 Five deterministic regression cases execute the actual app logic with a minimal DOM/timer/fetch test harness and real layout/motion modules. They cover pending Start/Step/Reset, out-of-order completion, stale failure, current failure recovery and post-switch pause/resume plus immutable trace. **Fresh candidate `npm run ci`: 37 passed, 0 failed, boundary 7 files**, Node 24.19.0. See [candidate CI output](candidate-ci.txt). These are DOM-stub integration tests, not browser or screenshot tests.
 
 **Final candidate browser validation remains NOT RUN.** Public screenshots above show the prior deployed build, not the repair. Do not count the fixed code as browser-accepted. Exact remote head and Node 22 CI are recorded in the draft PR.
+
+## Subsequent local candidate verification and scale-note repair
+
+[Fresh Mac local verification and mobile-note repair](mobile-note-fix.md) records the exact tested code SHA, 38-test CI, 31 browser functional checks, 7 viewport geometry checks, before/after images and remaining human/device gates. This closes the candidate local browser regression gap; production SHA mapping, Safari and physical-device acceptance remain open.

@@ -1,0 +1,707 @@
+[
+  {
+    "name": "1280 steady READY",
+    "result": "PASS",
+    "detail": {
+      "phase": "READY",
+      "sigma": "\u2014",
+      "band": "Ready when you are",
+      "title": "Steady path",
+      "status": "ready",
+      "terminal": "\u2014",
+      "hidden": true,
+      "cards": [],
+      "balls": 0,
+      "ball": null,
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "1280 steady Drop hides result",
+    "result": "PASS",
+    "detail": {
+      "phase": "DROPPING",
+      "sigma": "\u2014",
+      "band": "Dropping through the visual field\u2026",
+      "title": "Steady path",
+      "status": "in motion",
+      "terminal": "\u2014",
+      "hidden": true,
+      "cards": [],
+      "balls": 1,
+      "ball": [
+        "380",
+        "75.68"
+      ],
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "1280 steady Result/worldlines",
+    "result": "PASS",
+    "detail": {
+      "phase": "RESULT",
+      "sigma": "+0.45\u03c3",
+      "band": "Within the usual range",
+      "title": "Steady path",
+      "status": "branch",
+      "terminal": "maintain",
+      "hidden": false,
+      "cards": [
+        {
+          "label": "Maintain",
+          "state": "active"
+        },
+        {
+          "label": "Experiment",
+          "state": "open"
+        },
+        {
+          "label": "Transition",
+          "state": "open"
+        }
+      ],
+      "balls": 1,
+      "ball": [
+        "421.4",
+        "706"
+      ],
+      "label": "+0.45\u03c3 \u00b7 NORMAL",
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "1280 review READY",
+    "result": "PASS",
+    "detail": {
+      "phase": "READY",
+      "sigma": "\u2014",
+      "band": "Ready when you are",
+      "title": "Human review pause",
+      "status": "ready",
+      "terminal": "\u2014",
+      "hidden": true,
+      "cards": [],
+      "balls": 0,
+      "ball": null,
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "1280 review Drop hides result",
+    "result": "PASS",
+    "detail": {
+      "phase": "DROPPING",
+      "sigma": "\u2014",
+      "band": "Dropping through the visual field\u2026",
+      "title": "Human review pause",
+      "status": "in motion",
+      "terminal": "\u2014",
+      "hidden": true,
+      "cards": [],
+      "balls": 1,
+      "ball": [
+        "380",
+        "75.68"
+      ],
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "1280 review Result/worldlines",
+    "result": "PASS",
+    "detail": {
+      "phase": "RESULT",
+      "sigma": "+2.15\u03c3",
+      "band": "Well outside the usual range",
+      "title": "Human review pause",
+      "status": "review_required",
+      "terminal": "human review",
+      "hidden": false,
+      "cards": [
+        {
+          "label": "Return",
+          "state": "open"
+        },
+        {
+          "label": "Adapt",
+          "state": "paused"
+        },
+        {
+          "label": "Transition",
+          "state": "open"
+        }
+      ],
+      "balls": 1,
+      "ball": [
+        "577.8",
+        "706"
+      ],
+      "label": "+2.15\u03c3 \u00b7 HIGH",
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "390 steady READY",
+    "result": "PASS",
+    "detail": {
+      "phase": "READY",
+      "sigma": "\u2014",
+      "band": "Ready when you are",
+      "title": "Steady path",
+      "status": "ready",
+      "terminal": "\u2014",
+      "hidden": true,
+      "cards": [],
+      "balls": 0,
+      "ball": null,
+      "viewBox": "0 0 357 430",
+      "overflow": false
+    }
+  },
+  {
+    "name": "390 steady Drop hides result",
+    "result": "PASS",
+    "detail": {
+      "phase": "DROPPING",
+      "sigma": "\u2014",
+      "band": "Dropping through the visual field\u2026",
+      "title": "Steady path",
+      "status": "in motion",
+      "terminal": "\u2014",
+      "hidden": true,
+      "cards": [],
+      "balls": 1,
+      "ball": [
+        "178.5",
+        "68.88000000000002"
+      ],
+      "viewBox": "0 0 357 430",
+      "overflow": false
+    }
+  },
+  {
+    "name": "390 steady Result/worldlines",
+    "result": "PASS",
+    "detail": {
+      "phase": "RESULT",
+      "sigma": "+0.45\u03c3",
+      "band": "Within the usual range",
+      "title": "Steady path",
+      "status": "branch",
+      "terminal": "maintain",
+      "hidden": false,
+      "cards": [
+        {
+          "label": "Maintain",
+          "state": "active"
+        },
+        {
+          "label": "Experiment",
+          "state": "open"
+        },
+        {
+          "label": "Transition",
+          "state": "open"
+        }
+      ],
+      "balls": 1,
+      "ball": [
+        "195.1846153846154",
+        "391.3"
+      ],
+      "label": "+0.45\u03c3 \u00b7 NORMAL",
+      "viewBox": "0 0 357 430",
+      "overflow": false
+    }
+  },
+  {
+    "name": "390 review READY",
+    "result": "PASS",
+    "detail": {
+      "phase": "READY",
+      "sigma": "\u2014",
+      "band": "Ready when you are",
+      "title": "Human review pause",
+      "status": "ready",
+      "terminal": "\u2014",
+      "hidden": true,
+      "cards": [],
+      "balls": 0,
+      "ball": null,
+      "viewBox": "0 0 357 430",
+      "overflow": false
+    }
+  },
+  {
+    "name": "390 review Drop hides result",
+    "result": "PASS",
+    "detail": {
+      "phase": "DROPPING",
+      "sigma": "\u2014",
+      "band": "Dropping through the visual field\u2026",
+      "title": "Human review pause",
+      "status": "in motion",
+      "terminal": "\u2014",
+      "hidden": true,
+      "cards": [],
+      "balls": 1,
+      "ball": [
+        "178.5",
+        "68.88000000000002"
+      ],
+      "viewBox": "0 0 357 430",
+      "overflow": false
+    }
+  },
+  {
+    "name": "390 review Result/worldlines",
+    "result": "PASS",
+    "detail": {
+      "phase": "RESULT",
+      "sigma": "+2.15\u03c3",
+      "band": "Well outside the usual range",
+      "title": "Human review pause",
+      "status": "review_required",
+      "terminal": "human review",
+      "hidden": false,
+      "cards": [
+        {
+          "label": "Return",
+          "state": "open"
+        },
+        {
+          "label": "Adapt",
+          "state": "paused"
+        },
+        {
+          "label": "Transition",
+          "state": "open"
+        }
+      ],
+      "balls": 1,
+      "ball": [
+        "258.2153846153846",
+        "391.3"
+      ],
+      "label": "+2.15\u03c3 \u00b7 HIGH",
+      "viewBox": "0 0 357 430",
+      "overflow": false
+    }
+  },
+  {
+    "name": "844 steady READY",
+    "result": "PASS",
+    "detail": {
+      "phase": "READY",
+      "sigma": "\u2014",
+      "band": "Ready when you are",
+      "title": "Steady path",
+      "status": "ready",
+      "terminal": "\u2014",
+      "hidden": true,
+      "cards": [],
+      "balls": 0,
+      "ball": null,
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "844 steady Drop hides result",
+    "result": "PASS",
+    "detail": {
+      "phase": "DROPPING",
+      "sigma": "\u2014",
+      "band": "Dropping through the visual field\u2026",
+      "title": "Steady path",
+      "status": "in motion",
+      "terminal": "\u2014",
+      "hidden": true,
+      "cards": [],
+      "balls": 1,
+      "ball": [
+        "380",
+        "75.68"
+      ],
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "844 steady Result/worldlines",
+    "result": "PASS",
+    "detail": {
+      "phase": "RESULT",
+      "sigma": "+0.45\u03c3",
+      "band": "Within the usual range",
+      "title": "Steady path",
+      "status": "branch",
+      "terminal": "maintain",
+      "hidden": false,
+      "cards": [
+        {
+          "label": "Maintain",
+          "state": "active"
+        },
+        {
+          "label": "Experiment",
+          "state": "open"
+        },
+        {
+          "label": "Transition",
+          "state": "open"
+        }
+      ],
+      "balls": 1,
+      "ball": [
+        "421.4",
+        "706"
+      ],
+      "label": "+0.45\u03c3 \u00b7 NORMAL",
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "844 review READY",
+    "result": "PASS",
+    "detail": {
+      "phase": "READY",
+      "sigma": "\u2014",
+      "band": "Ready when you are",
+      "title": "Human review pause",
+      "status": "ready",
+      "terminal": "\u2014",
+      "hidden": true,
+      "cards": [],
+      "balls": 0,
+      "ball": null,
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "844 review Drop hides result",
+    "result": "PASS",
+    "detail": {
+      "phase": "DROPPING",
+      "sigma": "\u2014",
+      "band": "Dropping through the visual field\u2026",
+      "title": "Human review pause",
+      "status": "in motion",
+      "terminal": "\u2014",
+      "hidden": true,
+      "cards": [],
+      "balls": 1,
+      "ball": [
+        "380",
+        "75.68"
+      ],
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "844 review Result/worldlines",
+    "result": "PASS",
+    "detail": {
+      "phase": "RESULT",
+      "sigma": "+2.15\u03c3",
+      "band": "Well outside the usual range",
+      "title": "Human review pause",
+      "status": "review_required",
+      "terminal": "human review",
+      "hidden": false,
+      "cards": [
+        {
+          "label": "Return",
+          "state": "open"
+        },
+        {
+          "label": "Adapt",
+          "state": "paused"
+        },
+        {
+          "label": "Transition",
+          "state": "open"
+        }
+      ],
+      "balls": 1,
+      "ball": [
+        "577.8",
+        "706"
+      ],
+      "label": "+2.15\u03c3 \u00b7 HIGH",
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "pause stable",
+    "result": "PASS",
+    "detail": {
+      "phase": "PAUSED",
+      "sigma": "\u2014",
+      "band": "Dropping through the visual field\u2026",
+      "title": "Human review pause",
+      "status": "in motion",
+      "terminal": "\u2014",
+      "hidden": true,
+      "cards": [],
+      "balls": 1,
+      "ball": [
+        "380",
+        "75.68"
+      ],
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "resume and resize during motion",
+    "result": "PASS",
+    "detail": {
+      "phase": "RESULT",
+      "sigma": "+2.15\u03c3",
+      "band": "Well outside the usual range",
+      "title": "Human review pause",
+      "status": "review_required",
+      "terminal": "human review",
+      "hidden": false,
+      "cards": [
+        {
+          "label": "Return",
+          "state": "open"
+        },
+        {
+          "label": "Adapt",
+          "state": "paused"
+        },
+        {
+          "label": "Transition",
+          "state": "open"
+        }
+      ],
+      "balls": 1,
+      "ball": [
+        "577.8",
+        "706"
+      ],
+      "label": "+2.15\u03c3 \u00b7 HIGH",
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "repeat stable landing",
+    "result": "PASS",
+    "detail": {
+      "phase": "RESULT",
+      "sigma": "+2.15\u03c3",
+      "band": "Well outside the usual range",
+      "title": "Human review pause",
+      "status": "review_required",
+      "terminal": "human review",
+      "hidden": false,
+      "cards": [
+        {
+          "label": "Return",
+          "state": "open"
+        },
+        {
+          "label": "Adapt",
+          "state": "paused"
+        },
+        {
+          "label": "Transition",
+          "state": "open"
+        }
+      ],
+      "balls": 1,
+      "ball": [
+        "577.8",
+        "706"
+      ],
+      "label": "+2.15\u03c3 \u00b7 HIGH",
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "reset during motion",
+    "result": "PASS",
+    "detail": {
+      "phase": "READY",
+      "sigma": "\u2014",
+      "band": "Ready when you are",
+      "title": "Human review pause",
+      "status": "ready",
+      "terminal": "\u2014",
+      "hidden": true,
+      "cards": [],
+      "balls": 0,
+      "ball": null,
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "details supplied evidence",
+    "result": "PASS",
+    "detail": {
+      "confidence": "0.31",
+      "probabilities": "exploration\n48%\nstress\n43%\ntemporary_noise\n6%\nstable\n3%"
+    }
+  },
+  {
+    "name": "pending immediate Start guarded",
+    "result": "PASS",
+    "detail": {
+      "phase": "LOADING",
+      "sigma": "\u2014",
+      "band": "Ready when you are",
+      "title": "Human review pause",
+      "status": "ready",
+      "terminal": "\u2014",
+      "hidden": true,
+      "cards": [],
+      "balls": 0,
+      "ball": null,
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "rapid switches latest wins",
+    "result": "PASS",
+    "detail": {
+      "phase": "RESULT",
+      "sigma": "+0.45\u03c3",
+      "band": "Within the usual range",
+      "title": "Steady path",
+      "status": "branch",
+      "terminal": "maintain",
+      "hidden": false,
+      "cards": [
+        {
+          "label": "Maintain",
+          "state": "active"
+        },
+        {
+          "label": "Experiment",
+          "state": "open"
+        },
+        {
+          "label": "Transition",
+          "state": "open"
+        }
+      ],
+      "balls": 1,
+      "ball": [
+        "421.4",
+        "706"
+      ],
+      "label": "+0.45\u03c3 \u00b7 NORMAL",
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "missing-deviation",
+    "result": "PASS",
+    "detail": {
+      "phase": "RESULT",
+      "sigma": "\u2014",
+      "band": "No deviation supplied",
+      "title": "Steady path",
+      "status": "branch",
+      "terminal": "maintain",
+      "hidden": false,
+      "cards": [
+        {
+          "label": "Maintain",
+          "state": "active"
+        },
+        {
+          "label": "Experiment",
+          "state": "open"
+        },
+        {
+          "label": "Transition",
+          "state": "open"
+        }
+      ],
+      "balls": 1,
+      "ball": [
+        "380",
+        "706"
+      ],
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "missing-worldlines",
+    "result": "PASS",
+    "detail": {
+      "phase": "RESULT",
+      "sigma": "+0.45\u03c3",
+      "band": "Within the usual range",
+      "title": "Steady path",
+      "status": "branch",
+      "terminal": "maintain",
+      "hidden": true,
+      "cards": [],
+      "balls": 1,
+      "ball": [
+        "421.4",
+        "706"
+      ],
+      "label": "+0.45\u03c3 \u00b7 NORMAL",
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  },
+  {
+    "name": "closed",
+    "result": "PASS",
+    "detail": {
+      "phase": "RESULT",
+      "sigma": "+0.45\u03c3",
+      "band": "Within the usual range",
+      "title": "Steady path",
+      "status": "branch",
+      "terminal": "maintain",
+      "hidden": false,
+      "cards": [
+        {
+          "label": "Maintain",
+          "state": "active"
+        },
+        {
+          "label": "Experiment",
+          "state": "open"
+        },
+        {
+          "label": "Transition",
+          "state": "closed"
+        }
+      ],
+      "balls": 1,
+      "ball": [
+        "421.4",
+        "706"
+      ],
+      "label": "+0.45\u03c3 \u00b7 NORMAL",
+      "viewBox": "0 0 760 760",
+      "overflow": false
+    }
+  }
+]
