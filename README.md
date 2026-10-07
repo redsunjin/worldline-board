@@ -20,7 +20,7 @@ The main surface shows the trace-supplied deviation from a supplied baseline. Th
 
 The canonical working baseline is [`docs/00-current-status-and-plan.md`](docs/00-current-status-and-plan.md).
 
-It separates **완료 / 미검증 / 다음 작업 1개**. M1–M3 are merged; the next task is to verify and record the desktop/mobile **Drop → Result → Worldlines** flow before starting M4 (Trace details repositioning).
+It separates **완료 / 미검증 / 다음 작업 1개**. M1–M3 are merged. [Partial fresh verification](docs/verification/m1-m3-evidence.md) records passing local CI and public desktop observations; mobile/fixture coverage and exact deployment mapping remain open. The next task is to complete those **Drop → Result → Worldlines** checks and obtain human review before starting M4 (Trace details repositioning).
 
 ## What this repository is
 

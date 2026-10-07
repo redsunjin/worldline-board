@@ -1,0 +1,62 @@
+
+> worldline-board@0.1.0 ci
+> npm run check && npm test
+
+
+> worldline-board@0.1.0 check
+> node scripts/check-public-boundary.mjs
+
+{
+  "ok": true,
+  "scanned": 7
+}
+
+> worldline-board@0.1.0 test
+> node --test
+
+✔ same seed reproduces the same decorative motion (1.873292ms)
+✔ different seeds vary the route but keep the same landing target (0.911917ms)
+✔ landing target stays aligned with sigma geometry on mobile dimensions (0.1525ms)
+✔ visual motion never mutates the scene or semantic trace layout (0.348292ms)
+✔ missing deviation falls to the visual center without inventing one (0.130125ms)
+✔ sigma scale is positioned from the visual landing line (0.771292ms)
+✔ completed drop renders a trace-supplied deviation label at landing (0.270042ms)
+✔ result reveal has focused landing and card transitions (2.434041ms)
+✔ pending initial load and switch block Start/Step/Reset and discard old motion (4.722958ms)
+✔ latest example wins when requests resolve out of order (0.984ms)
+✔ stale failure cannot unlock current pending load (0.735541ms)
+✔ current failed switch restores prior selection and allows recovery (1.301709ms)
+✔ pause/resume after a switch retains one timer and supplied result (7.065375ms)
+✔ mobile board keeps a 430px SVG with room for the explanatory note (0.7105ms)
+✔ mobile worldline cards use horizontal swipe instead of a tall stack (0.0985ms)
+✔ mobile advanced controls use a compact two-action grid (0.052416ms)
+✔ mobile scene geometry uses the rendered board width with a 430px height (0.049791ms)
+✔ mobile note uses normal flow below the SVG (0.076417ms)
+✔ main canvas does not animate along semantic pegs (0.657083ms)
+✔ advanced step still inspects semantic events without driving completion (0.067625ms)
+✔ public canvas explains that motion is decorative (0.061833ms)
+✔ READY entry exposes one primary Sigma Drop action before advanced controls (0.683625ms)
+✔ example, step, and reset remain available under Advanced controls (0.066625ms)
+✔ READY copy describes the human-facing flow (0.062292ms)
+✔ mobile keeps the primary CTA full width and advanced controls secondary (0.127042ms)
+✔ worldline fan remains conditional on trace-supplied worldlines (0.662875ms)
+✔ result surface has a visual bridge into the worldline surface (0.09025ms)
+✔ worldline fan origin uses the supplied deviation when present (0.052625ms)
+✔ path and card reveal timing is presentation only (0.054917ms)
+✔ semantic count equals trace steps (0.968417ms)
+✔ review example ends paused (0.112ms)
+✔ noul values move monotonically (0.050916ms)
+✔ steady example exposes normal deviation (0.083459ms)
+✔ sigma guides and deviation peg use the same scale (0.787625ms)
+✔ sigma scale is centered on mu and symmetric (0.052334ms)
+✔ non-code deviation steps also align to the sigma scale (0.082416ms)
+✔ worldlines are passed through without synthesis (0.519083ms)
+✔ trace without worldlines does not invent branches (0.225334ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 111.006208

@@ -4,7 +4,7 @@ import{buildVisualDropPath}from"/src/drop-motion.mjs";
 const EXAMPLES={steady:"/examples/steady.json",review:"/examples/human-review.json"};
 const WORLDLINE_COLORS=["#74adff","#a47cff","#ff5e7f","#6fd6ff","#c98cff"];
 const DEVIATION_COLORS={normal:"#74adff",elevated:"#a47cff",high:"#ff6a7f",critical:"#ff4668",unknown:"#8ea0b8"};
-const state={trace:null,scene:null,index:-1,timer:null,motion:null,motionIndex:-1,dropComplete:false};
+const state={trace:null,scene:null,index:-1,timer:null,motion:null,motionIndex:-1,dropComplete:false,loading:false,loadVersion:0,loadedKey:null};
 const $=id=>document.getElementById(id);
 const svg=$("board");
 const worldlineSvg=$("worldlineFan");
@@ -364,6 +364,7 @@ function startMotion({fresh=false}={}){
 }
 
 function reset(){
+  if(state.loading||!state.scene)return;
   clearMotionTimer();
   state.index=-1;
   state.motion=null;
@@ -376,6 +377,7 @@ function reset(){
 }
 
 function step(){
+  if(state.loading||!state.scene)return;
   if(state.timer)pauseMotion();
   const max=state.scene.semanticPegs.length-1;
   if(state.index>=max)state.index=-1;
@@ -384,6 +386,7 @@ function step(){
 }
 
 function play(){
+  if(state.loading||!state.scene)return;
   if(state.timer){
     pauseMotion();
     return;
@@ -392,20 +395,54 @@ function play(){
   startMotion({fresh});
 }
 
+function setMotionControlsDisabled(disabled){
+  ["play","step","reset"].forEach(id=>$(id).disabled=disabled);
+}
+
 async function load(key){
+  const version=++state.loadVersion;
   clearMotionTimer();
-  const r=await fetch(EXAMPLES[key]);
-  state.trace=await r.json();
-  state.scene=buildBoardScene(state.trace,sceneOptions());
-  state.index=-1;
-  state.motion=null;
-  state.motionIndex=-1;
-  state.dropComplete=false;
-  $("title").textContent=state.trace.title||state.trace.traceId;
-  $("play").textContent="▶ Start Sigma Drop";
-  inspect(-1);
-  syncExperience();
-  render();
+  // Reset the old presentation before waiting; a pending request must not retain a result.
+  if(state.scene){
+    state.loading=false;
+    reset();
+  }
+  state.loading=true;
+  setMotionControlsDisabled(true);
+  $("play").textContent="Loading trace…";
+  $("phase").textContent="LOADING";
+  try{
+    const r=await fetch(EXAMPLES[key]);
+    if(!r.ok)throw new Error("Trace request failed: "+r.status);
+    const trace=await r.json();
+    if(version!==state.loadVersion)return;
+    const scene=buildBoardScene(trace,sceneOptions());
+    clearMotionTimer();
+    state.trace=trace;
+    state.scene=scene;
+    state.loadedKey=key;
+    state.index=-1;
+    state.motion=null;
+    state.motionIndex=-1;
+    state.dropComplete=false;
+    $("title").textContent=trace.title||trace.traceId;
+    inspect(-1);
+    syncExperience();
+    render();
+  }catch(error){
+    if(version!==state.loadVersion)return;
+    if(state.loadedKey)$("example").value=state.loadedKey;
+    $("phase").textContent=state.scene?"READY":"UNAVAILABLE";
+    $("resultBand").textContent="Could not load example";
+    $("resultMessage").textContent="Choose an example to retry. Any previous trace remains unchanged.";
+    console.error(error);
+  }finally{
+    if(version===state.loadVersion){
+      state.loading=false;
+      setMotionControlsDisabled(!state.scene);
+      $("play").textContent="▶ Start Sigma Drop";
+    }
+  }
 }
 
 $("example").addEventListener("change",e=>load(e.target.value));
