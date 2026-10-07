@@ -34,3 +34,8 @@ test("mobile scene geometry uses the rendered board width with a 430px height",(
 test("mobile note uses normal flow below the SVG",()=>{
  assert.match(css, /@media\(max-width:720px\)[\s\S]*\.scale-note\{position:static;[^}]*padding:0 12px 10px/);
 });
+
+test("mobile result stacks sigma and copy without a fixed-width override",()=>{
+ assert.match(css, /@media\(max-width:720px\)[\s\S]*\.result-card\{[^}]*grid-template-columns:minmax\(0,1fr\);gap:18px/);
+ assert.doesNotMatch(css, /grid-template-columns:96px 1fr/);
+});
