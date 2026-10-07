@@ -20,3 +20,5 @@ At 390×844 the absolute scale note overlapped sigma tick labels by ~6.7px and c
 ## Limitations and human gate
 
 Actual phone touch/hardware rotation and Safari remain NOT RUN. No protected Vercel access, deployment mapping, merge or manual deployment. Existing mobile Result sigma/copy spacing remains very tight (~1.1px bounding-box overlap on review), explicitly left for human review as outside the note/tick repair. Overall visual acceptance, physical-device checks and M4 remain gated on human review; this record is not production acceptance. Remote exact-head CI is checked after push and reported separately.
+
+Subsequent [Result readability repair](result-layout-fix.md) resolves the previously recorded sigma/copy spacing issue and preserves the scale-note repair; device/Safari/human gates remain open.

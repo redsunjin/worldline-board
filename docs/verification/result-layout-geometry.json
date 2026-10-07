@@ -1,0 +1,1370 @@
+[
+  {
+    "name": "steady",
+    "width": 320,
+    "sigma": {
+      "x": 34,
+      "y": 398.34375,
+      "right": 152.296875,
+      "bottom": 442.34375,
+      "width": 118.296875
+    },
+    "copy": {
+      "x": 34,
+      "y": 456.171875,
+      "right": 271,
+      "bottom": 513.234375,
+      "width": 237
+    },
+    "message": {
+      "x": 34,
+      "y": 479.171875,
+      "right": 271,
+      "bottom": 513.234375,
+      "width": 237
+    },
+    "box": {
+      "x": 19,
+      "y": 371.34375,
+      "right": 286,
+      "bottom": 528.234375,
+      "width": 267
+    },
+    "verticalGap": 13.828125,
+    "horizontalGap": -118.296875,
+    "overflow": false,
+    "sigmaText": "+0.45\u03c3",
+    "phase": "RESULT",
+    "noteGap": 25.2840576171875
+  },
+  {
+    "name": "steady",
+    "width": 360,
+    "sigma": {
+      "x": 34,
+      "y": 387.8125,
+      "right": 152.296875,
+      "bottom": 431.8125,
+      "width": 118.296875
+    },
+    "copy": {
+      "x": 34,
+      "y": 445.640625,
+      "right": 311,
+      "bottom": 502.703125,
+      "width": 277
+    },
+    "message": {
+      "x": 34,
+      "y": 468.640625,
+      "right": 311,
+      "bottom": 502.703125,
+      "width": 277
+    },
+    "box": {
+      "x": 19,
+      "y": 360.8125,
+      "right": 326,
+      "bottom": 517.703125,
+      "width": 307
+    },
+    "verticalGap": 13.828125,
+    "horizontalGap": -118.296875,
+    "overflow": false,
+    "sigmaText": "+0.45\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "steady",
+    "width": 390,
+    "sigma": {
+      "x": 34,
+      "y": 375.171875,
+      "right": 152.296875,
+      "bottom": 419.171875,
+      "width": 118.296875
+    },
+    "copy": {
+      "x": 34,
+      "y": 433,
+      "right": 341,
+      "bottom": 473.03125,
+      "width": 307
+    },
+    "message": {
+      "x": 34,
+      "y": 456,
+      "right": 341,
+      "bottom": 473.03125,
+      "width": 307
+    },
+    "box": {
+      "x": 19,
+      "y": 348.171875,
+      "right": 356,
+      "bottom": 488.03125,
+      "width": 337
+    },
+    "verticalGap": 13.828125,
+    "horizontalGap": -118.296875,
+    "overflow": false,
+    "sigmaText": "+0.45\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "steady",
+    "width": 419,
+    "sigma": {
+      "x": 34,
+      "y": 375.40625,
+      "right": 152.296875,
+      "bottom": 419.40625,
+      "width": 118.296875
+    },
+    "copy": {
+      "x": 34,
+      "y": 433.234375,
+      "right": 370,
+      "bottom": 473.265625,
+      "width": 336
+    },
+    "message": {
+      "x": 34,
+      "y": 456.234375,
+      "right": 370,
+      "bottom": 473.265625,
+      "width": 336
+    },
+    "box": {
+      "x": 19,
+      "y": 348.40625,
+      "right": 385,
+      "bottom": 488.265625,
+      "width": 366
+    },
+    "verticalGap": 13.828125,
+    "horizontalGap": -118.296875,
+    "overflow": false,
+    "sigmaText": "+0.45\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "steady",
+    "width": 420,
+    "sigma": {
+      "x": 34,
+      "y": 375.53125,
+      "right": 152.296875,
+      "bottom": 419.53125,
+      "width": 118.296875
+    },
+    "copy": {
+      "x": 34,
+      "y": 433.359375,
+      "right": 371,
+      "bottom": 473.390625,
+      "width": 337
+    },
+    "message": {
+      "x": 34,
+      "y": 456.359375,
+      "right": 371,
+      "bottom": 473.390625,
+      "width": 337
+    },
+    "box": {
+      "x": 19,
+      "y": 348.53125,
+      "right": 386,
+      "bottom": 488.390625,
+      "width": 367
+    },
+    "verticalGap": 13.828125,
+    "horizontalGap": -118.296875,
+    "overflow": false,
+    "sigmaText": "+0.45\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "steady",
+    "width": 421,
+    "sigma": {
+      "x": 34,
+      "y": 373.53125,
+      "right": 198.984375,
+      "bottom": 435.53125,
+      "width": 164.984375
+    },
+    "copy": {
+      "x": 34,
+      "y": 447.046875,
+      "right": 372,
+      "bottom": 487.078125,
+      "width": 338
+    },
+    "message": {
+      "x": 34,
+      "y": 470.046875,
+      "right": 372,
+      "bottom": 487.078125,
+      "width": 338
+    },
+    "box": {
+      "x": 19,
+      "y": 348.53125,
+      "right": 387,
+      "bottom": 502.078125,
+      "width": 368
+    },
+    "verticalGap": 11.515625,
+    "horizontalGap": -164.984375,
+    "overflow": false,
+    "sigmaText": "+0.45\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "steady",
+    "width": 430,
+    "sigma": {
+      "x": 34,
+      "y": 373.53125,
+      "right": 198.984375,
+      "bottom": 435.53125,
+      "width": 164.984375
+    },
+    "copy": {
+      "x": 34,
+      "y": 447.046875,
+      "right": 381,
+      "bottom": 487.078125,
+      "width": 347
+    },
+    "message": {
+      "x": 34,
+      "y": 470.046875,
+      "right": 381,
+      "bottom": 487.078125,
+      "width": 347
+    },
+    "box": {
+      "x": 19,
+      "y": 348.53125,
+      "right": 396,
+      "bottom": 502.078125,
+      "width": 377
+    },
+    "verticalGap": 11.515625,
+    "horizontalGap": -164.984375,
+    "overflow": false,
+    "sigmaText": "+0.45\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "steady",
+    "width": 431,
+    "sigma": {
+      "x": 34,
+      "y": 373.53125,
+      "right": 198.984375,
+      "bottom": 435.53125,
+      "width": 164.984375
+    },
+    "copy": {
+      "x": 34,
+      "y": 447.046875,
+      "right": 382,
+      "bottom": 487.078125,
+      "width": 348
+    },
+    "message": {
+      "x": 34,
+      "y": 470.046875,
+      "right": 382,
+      "bottom": 487.078125,
+      "width": 348
+    },
+    "box": {
+      "x": 19,
+      "y": 348.53125,
+      "right": 397,
+      "bottom": 502.078125,
+      "width": 378
+    },
+    "verticalGap": 11.515625,
+    "horizontalGap": -164.984375,
+    "overflow": false,
+    "sigmaText": "+0.45\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "steady",
+    "width": 719,
+    "sigma": {
+      "x": 34,
+      "y": 360.703125,
+      "right": 198.984375,
+      "bottom": 422.703125,
+      "width": 164.984375
+    },
+    "copy": {
+      "x": 34,
+      "y": 434.21875,
+      "right": 670,
+      "bottom": 474.25,
+      "width": 636
+    },
+    "message": {
+      "x": 34,
+      "y": 457.21875,
+      "right": 670,
+      "bottom": 474.25,
+      "width": 636
+    },
+    "box": {
+      "x": 19,
+      "y": 335.703125,
+      "right": 685,
+      "bottom": 489.25,
+      "width": 666
+    },
+    "verticalGap": 11.515625,
+    "horizontalGap": -164.984375,
+    "overflow": false,
+    "sigmaText": "+0.45\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "steady",
+    "width": 720,
+    "sigma": {
+      "x": 34,
+      "y": 360.703125,
+      "right": 198.984375,
+      "bottom": 422.703125,
+      "width": 164.984375
+    },
+    "copy": {
+      "x": 34,
+      "y": 434.21875,
+      "right": 671,
+      "bottom": 474.25,
+      "width": 637
+    },
+    "message": {
+      "x": 34,
+      "y": 457.21875,
+      "right": 671,
+      "bottom": 474.25,
+      "width": 637
+    },
+    "box": {
+      "x": 19,
+      "y": 335.703125,
+      "right": 686,
+      "bottom": 489.25,
+      "width": 667
+    },
+    "verticalGap": 11.515625,
+    "horizontalGap": -164.984375,
+    "overflow": false,
+    "sigmaText": "+0.45\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "steady",
+    "width": 721,
+    "sigma": {
+      "x": 52,
+      "y": 610.828125,
+      "right": 209.875,
+      "bottom": 670.828125,
+      "width": 157.875
+    },
+    "copy": {
+      "x": 251.234375,
+      "y": 605.640625,
+      "right": 653.984375,
+      "bottom": 659.4375,
+      "width": 402.75
+    },
+    "message": {
+      "x": 251.234375,
+      "y": 634.640625,
+      "right": 653.984375,
+      "bottom": 659.4375,
+      "width": 402.75
+    },
+    "box": {
+      "x": 33,
+      "y": 581.828125,
+      "right": 673,
+      "bottom": 683.25,
+      "width": 640
+    },
+    "verticalGap": -65.1875,
+    "horizontalGap": 41.359375,
+    "overflow": false,
+    "sigmaText": "+0.45\u03c3",
+    "phase": "RESULT",
+    "noteGap": 16.67901611328125
+  },
+  {
+    "name": "steady",
+    "width": 844,
+    "sigma": {
+      "x": 52,
+      "y": 169.890625,
+      "right": 236.0625,
+      "bottom": 238.890625,
+      "width": 184.0625
+    },
+    "copy": {
+      "x": 289.40625,
+      "y": 168.5625,
+      "right": 776.984375,
+      "bottom": 222.359375,
+      "width": 487.578125
+    },
+    "message": {
+      "x": 289.40625,
+      "y": 197.5625,
+      "right": 776.984375,
+      "bottom": 222.359375,
+      "width": 487.578125
+    },
+    "box": {
+      "x": 33,
+      "y": 140.890625,
+      "right": 796,
+      "bottom": 250.046875,
+      "width": 763
+    },
+    "verticalGap": -70.328125,
+    "horizontalGap": 53.34375,
+    "overflow": false,
+    "sigmaText": "+0.45\u03c3",
+    "phase": "RESULT",
+    "noteGap": 20.07769775390625
+  },
+  {
+    "name": "steady",
+    "width": 1280,
+    "sigma": {
+      "x": 150.5,
+      "y": 176.203125,
+      "right": 383.140625,
+      "bottom": 265.203125,
+      "width": 232.640625
+    },
+    "copy": {
+      "x": 462.078125,
+      "y": 185.140625,
+      "right": 1114.484375,
+      "bottom": 238.9375,
+      "width": 652.40625
+    },
+    "message": {
+      "x": 462.078125,
+      "y": 214.140625,
+      "right": 1114.484375,
+      "bottom": 238.9375,
+      "width": 652.40625
+    },
+    "box": {
+      "x": 131.5,
+      "y": 150.203125,
+      "right": 1133.5,
+      "bottom": 273.875,
+      "width": 1002
+    },
+    "verticalGap": -80.0625,
+    "horizontalGap": 78.9375,
+    "overflow": false,
+    "sigmaText": "+0.45\u03c3",
+    "phase": "RESULT",
+    "noteGap": 25.6815185546875
+  },
+  {
+    "name": "review",
+    "width": 320,
+    "sigma": {
+      "x": 34,
+      "y": 398.34375,
+      "right": 143.109375,
+      "bottom": 442.34375,
+      "width": 109.109375
+    },
+    "copy": {
+      "x": 34,
+      "y": 456.171875,
+      "right": 271,
+      "bottom": 513.234375,
+      "width": 237
+    },
+    "message": {
+      "x": 34,
+      "y": 479.171875,
+      "right": 271,
+      "bottom": 513.234375,
+      "width": 237
+    },
+    "box": {
+      "x": 19,
+      "y": 371.34375,
+      "right": 286,
+      "bottom": 528.234375,
+      "width": 267
+    },
+    "verticalGap": 13.828125,
+    "horizontalGap": -109.109375,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 25.2840576171875
+  },
+  {
+    "name": "review",
+    "width": 360,
+    "sigma": {
+      "x": 34,
+      "y": 387.8125,
+      "right": 143.109375,
+      "bottom": 431.8125,
+      "width": 109.109375
+    },
+    "copy": {
+      "x": 34,
+      "y": 445.640625,
+      "right": 311,
+      "bottom": 502.703125,
+      "width": 277
+    },
+    "message": {
+      "x": 34,
+      "y": 468.640625,
+      "right": 311,
+      "bottom": 502.703125,
+      "width": 277
+    },
+    "box": {
+      "x": 19,
+      "y": 360.8125,
+      "right": 326,
+      "bottom": 517.703125,
+      "width": 307
+    },
+    "verticalGap": 13.828125,
+    "horizontalGap": -109.109375,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "review",
+    "width": 390,
+    "sigma": {
+      "x": 34,
+      "y": 375.171875,
+      "right": 143.109375,
+      "bottom": 419.171875,
+      "width": 109.109375
+    },
+    "copy": {
+      "x": 34,
+      "y": 433,
+      "right": 341,
+      "bottom": 490.0625,
+      "width": 307
+    },
+    "message": {
+      "x": 34,
+      "y": 456,
+      "right": 341,
+      "bottom": 490.0625,
+      "width": 307
+    },
+    "box": {
+      "x": 19,
+      "y": 348.171875,
+      "right": 356,
+      "bottom": 505.0625,
+      "width": 337
+    },
+    "verticalGap": 13.828125,
+    "horizontalGap": -109.109375,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "review",
+    "width": 419,
+    "sigma": {
+      "x": 34,
+      "y": 375.40625,
+      "right": 143.109375,
+      "bottom": 419.40625,
+      "width": 109.109375
+    },
+    "copy": {
+      "x": 34,
+      "y": 433.234375,
+      "right": 370,
+      "bottom": 473.265625,
+      "width": 336
+    },
+    "message": {
+      "x": 34,
+      "y": 456.234375,
+      "right": 370,
+      "bottom": 473.265625,
+      "width": 336
+    },
+    "box": {
+      "x": 19,
+      "y": 348.40625,
+      "right": 385,
+      "bottom": 488.265625,
+      "width": 366
+    },
+    "verticalGap": 13.828125,
+    "horizontalGap": -109.109375,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "review",
+    "width": 420,
+    "sigma": {
+      "x": 34,
+      "y": 375.53125,
+      "right": 143.109375,
+      "bottom": 419.53125,
+      "width": 109.109375
+    },
+    "copy": {
+      "x": 34,
+      "y": 433.359375,
+      "right": 371,
+      "bottom": 473.390625,
+      "width": 337
+    },
+    "message": {
+      "x": 34,
+      "y": 456.359375,
+      "right": 371,
+      "bottom": 473.390625,
+      "width": 337
+    },
+    "box": {
+      "x": 19,
+      "y": 348.53125,
+      "right": 386,
+      "bottom": 488.390625,
+      "width": 367
+    },
+    "verticalGap": 13.828125,
+    "horizontalGap": -109.109375,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "review",
+    "width": 421,
+    "sigma": {
+      "x": 34,
+      "y": 373.53125,
+      "right": 186.078125,
+      "bottom": 435.53125,
+      "width": 152.078125
+    },
+    "copy": {
+      "x": 34,
+      "y": 447.046875,
+      "right": 372,
+      "bottom": 487.078125,
+      "width": 338
+    },
+    "message": {
+      "x": 34,
+      "y": 470.046875,
+      "right": 372,
+      "bottom": 487.078125,
+      "width": 338
+    },
+    "box": {
+      "x": 19,
+      "y": 348.53125,
+      "right": 387,
+      "bottom": 502.078125,
+      "width": 368
+    },
+    "verticalGap": 11.515625,
+    "horizontalGap": -152.078125,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "review",
+    "width": 430,
+    "sigma": {
+      "x": 34,
+      "y": 373.53125,
+      "right": 186.078125,
+      "bottom": 435.53125,
+      "width": 152.078125
+    },
+    "copy": {
+      "x": 34,
+      "y": 447.046875,
+      "right": 381,
+      "bottom": 487.078125,
+      "width": 347
+    },
+    "message": {
+      "x": 34,
+      "y": 470.046875,
+      "right": 381,
+      "bottom": 487.078125,
+      "width": 347
+    },
+    "box": {
+      "x": 19,
+      "y": 348.53125,
+      "right": 396,
+      "bottom": 502.078125,
+      "width": 377
+    },
+    "verticalGap": 11.515625,
+    "horizontalGap": -152.078125,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "review",
+    "width": 431,
+    "sigma": {
+      "x": 34,
+      "y": 373.53125,
+      "right": 186.078125,
+      "bottom": 435.53125,
+      "width": 152.078125
+    },
+    "copy": {
+      "x": 34,
+      "y": 447.046875,
+      "right": 382,
+      "bottom": 487.078125,
+      "width": 348
+    },
+    "message": {
+      "x": 34,
+      "y": 470.046875,
+      "right": 382,
+      "bottom": 487.078125,
+      "width": 348
+    },
+    "box": {
+      "x": 19,
+      "y": 348.53125,
+      "right": 397,
+      "bottom": 502.078125,
+      "width": 378
+    },
+    "verticalGap": 11.515625,
+    "horizontalGap": -152.078125,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "review",
+    "width": 719,
+    "sigma": {
+      "x": 34,
+      "y": 360.703125,
+      "right": 186.078125,
+      "bottom": 422.703125,
+      "width": 152.078125
+    },
+    "copy": {
+      "x": 34,
+      "y": 434.21875,
+      "right": 670,
+      "bottom": 474.25,
+      "width": 636
+    },
+    "message": {
+      "x": 34,
+      "y": 457.21875,
+      "right": 670,
+      "bottom": 474.25,
+      "width": 636
+    },
+    "box": {
+      "x": 19,
+      "y": 335.703125,
+      "right": 685,
+      "bottom": 489.25,
+      "width": 666
+    },
+    "verticalGap": 11.515625,
+    "horizontalGap": -152.078125,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "review",
+    "width": 720,
+    "sigma": {
+      "x": 34,
+      "y": 360.703125,
+      "right": 186.078125,
+      "bottom": 422.703125,
+      "width": 152.078125
+    },
+    "copy": {
+      "x": 34,
+      "y": 434.21875,
+      "right": 671,
+      "bottom": 474.25,
+      "width": 637
+    },
+    "message": {
+      "x": 34,
+      "y": 457.21875,
+      "right": 671,
+      "bottom": 474.25,
+      "width": 637
+    },
+    "box": {
+      "x": 19,
+      "y": 335.703125,
+      "right": 686,
+      "bottom": 489.25,
+      "width": 667
+    },
+    "verticalGap": 11.515625,
+    "horizontalGap": -152.078125,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "review",
+    "width": 721,
+    "sigma": {
+      "x": 52,
+      "y": 618.40625,
+      "right": 197.53125,
+      "bottom": 678.40625,
+      "width": 145.53125
+    },
+    "copy": {
+      "x": 251.234375,
+      "y": 600.828125,
+      "right": 653.984375,
+      "bottom": 679.421875,
+      "width": 402.75
+    },
+    "message": {
+      "x": 251.234375,
+      "y": 629.828125,
+      "right": 653.984375,
+      "bottom": 679.421875,
+      "width": 402.75
+    },
+    "box": {
+      "x": 33,
+      "y": 581.828125,
+      "right": 673,
+      "bottom": 698.421875,
+      "width": 640
+    },
+    "verticalGap": -77.578125,
+    "horizontalGap": 53.703125,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 16.67901611328125
+  },
+  {
+    "name": "review",
+    "width": 844,
+    "sigma": {
+      "x": 52,
+      "y": 169.890625,
+      "right": 221.609375,
+      "bottom": 238.890625,
+      "width": 169.609375
+    },
+    "copy": {
+      "x": 289.40625,
+      "y": 168.5625,
+      "right": 776.984375,
+      "bottom": 222.359375,
+      "width": 487.578125
+    },
+    "message": {
+      "x": 289.40625,
+      "y": 197.5625,
+      "right": 776.984375,
+      "bottom": 222.359375,
+      "width": 487.578125
+    },
+    "box": {
+      "x": 33,
+      "y": 140.890625,
+      "right": 796,
+      "bottom": 250.046875,
+      "width": 763
+    },
+    "verticalGap": -70.328125,
+    "horizontalGap": 67.796875,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 20.07769775390625
+  },
+  {
+    "name": "review",
+    "width": 1280,
+    "sigma": {
+      "x": 150.5,
+      "y": 176.203125,
+      "right": 364.734375,
+      "bottom": 265.203125,
+      "width": 214.234375
+    },
+    "copy": {
+      "x": 462.078125,
+      "y": 185.140625,
+      "right": 1114.484375,
+      "bottom": 238.9375,
+      "width": 652.40625
+    },
+    "message": {
+      "x": 462.078125,
+      "y": 214.140625,
+      "right": 1114.484375,
+      "bottom": 238.9375,
+      "width": 652.40625
+    },
+    "box": {
+      "x": 131.5,
+      "y": 150.203125,
+      "right": 1133.5,
+      "bottom": 273.875,
+      "width": 1002
+    },
+    "verticalGap": -80.0625,
+    "horizontalGap": 97.34375,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 25.6815185546875
+  },
+  {
+    "name": "long-copy",
+    "width": 320,
+    "sigma": {
+      "x": 34,
+      "y": 138.34375,
+      "right": 143.109375,
+      "bottom": 182.34375,
+      "width": 109.109375
+    },
+    "copy": {
+      "x": 34,
+      "y": 196.171875,
+      "right": 271,
+      "bottom": 357.359375,
+      "width": 237
+    },
+    "message": {
+      "x": 34,
+      "y": 255.171875,
+      "right": 271,
+      "bottom": 357.359375,
+      "width": 237
+    },
+    "box": {
+      "x": 19,
+      "y": 111.34375,
+      "right": 286,
+      "bottom": 372.359375,
+      "width": 267
+    },
+    "verticalGap": 13.828125,
+    "horizontalGap": -109.109375,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 25.2840576171875
+  },
+  {
+    "name": "long-copy",
+    "width": 421,
+    "sigma": {
+      "x": 34,
+      "y": 125.53125,
+      "right": 186.078125,
+      "bottom": 187.53125,
+      "width": 152.078125
+    },
+    "copy": {
+      "x": 34,
+      "y": 199.046875,
+      "right": 372,
+      "bottom": 308.171875,
+      "width": 338
+    },
+    "message": {
+      "x": 34,
+      "y": 240.046875,
+      "right": 372,
+      "bottom": 308.171875,
+      "width": 338
+    },
+    "box": {
+      "x": 19,
+      "y": 100.53125,
+      "right": 387,
+      "bottom": 323.171875,
+      "width": 368
+    },
+    "verticalGap": 11.515625,
+    "horizontalGap": -152.078125,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "long-copy",
+    "width": 430,
+    "sigma": {
+      "x": 34,
+      "y": 125.53125,
+      "right": 186.078125,
+      "bottom": 187.53125,
+      "width": 152.078125
+    },
+    "copy": {
+      "x": 34,
+      "y": 199.046875,
+      "right": 381,
+      "bottom": 308.171875,
+      "width": 347
+    },
+    "message": {
+      "x": 34,
+      "y": 240.046875,
+      "right": 381,
+      "bottom": 308.171875,
+      "width": 347
+    },
+    "box": {
+      "x": 19,
+      "y": 100.53125,
+      "right": 396,
+      "bottom": 323.171875,
+      "width": 377
+    },
+    "verticalGap": 11.515625,
+    "horizontalGap": -152.078125,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "long-copy",
+    "width": 720,
+    "sigma": {
+      "x": 34,
+      "y": 188.703125,
+      "right": 186.078125,
+      "bottom": 250.703125,
+      "width": 152.078125
+    },
+    "copy": {
+      "x": 34,
+      "y": 262.21875,
+      "right": 671,
+      "bottom": 319.28125,
+      "width": 637
+    },
+    "message": {
+      "x": 34,
+      "y": 285.21875,
+      "right": 671,
+      "bottom": 319.28125,
+      "width": 637
+    },
+    "box": {
+      "x": 19,
+      "y": 163.703125,
+      "right": 686,
+      "bottom": 334.28125,
+      "width": 667
+    },
+    "verticalGap": 11.515625,
+    "horizontalGap": -152.078125,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 3.70001220703125
+  },
+  {
+    "name": "long-copy",
+    "width": 721,
+    "sigma": {
+      "x": 52,
+      "y": 494.609375,
+      "right": 197.53125,
+      "bottom": 554.609375,
+      "width": 145.53125
+    },
+    "copy": {
+      "x": 251.234375,
+      "y": 428.828125,
+      "right": 653.984375,
+      "bottom": 603.8125,
+      "width": 402.75
+    },
+    "message": {
+      "x": 251.234375,
+      "y": 479.828125,
+      "right": 653.984375,
+      "bottom": 603.8125,
+      "width": 402.75
+    },
+    "box": {
+      "x": 33,
+      "y": 409.828125,
+      "right": 673,
+      "bottom": 622.8125,
+      "width": 640
+    },
+    "verticalGap": -125.78125,
+    "horizontalGap": 53.703125,
+    "overflow": false,
+    "sigmaText": "+2.15\u03c3",
+    "phase": "RESULT",
+    "noteGap": 16.67901611328125
+  },
+  {
+    "name": "missing-deviation",
+    "width": 320,
+    "sigma": {
+      "x": 34,
+      "y": 398.34375,
+      "right": 64.5,
+      "bottom": 442.34375,
+      "width": 30.5
+    },
+    "copy": {
+      "x": 34,
+      "y": 456.171875,
+      "right": 271,
+      "bottom": 513.234375,
+      "width": 237
+    },
+    "message": {
+      "x": 34,
+      "y": 479.171875,
+      "right": 271,
+      "bottom": 513.234375,
+      "width": 237
+    },
+    "box": {
+      "x": 19,
+      "y": 371.34375,
+      "right": 286,
+      "bottom": 528.234375,
+      "width": 267
+    },
+    "verticalGap": 13.828125,
+    "horizontalGap": -30.5,
+    "overflow": false,
+    "sigmaText": "\u2014",
+    "phase": "RESULT",
+    "noteGap": null
+  },
+  {
+    "name": "missing-deviation",
+    "width": 390,
+    "sigma": {
+      "x": 34,
+      "y": 386.171875,
+      "right": 64.5,
+      "bottom": 430.171875,
+      "width": 30.5
+    },
+    "copy": {
+      "x": 34,
+      "y": 444,
+      "right": 341,
+      "bottom": 484.03125,
+      "width": 307
+    },
+    "message": {
+      "x": 34,
+      "y": 467,
+      "right": 341,
+      "bottom": 484.03125,
+      "width": 307
+    },
+    "box": {
+      "x": 19,
+      "y": 359.171875,
+      "right": 356,
+      "bottom": 499.03125,
+      "width": 337
+    },
+    "verticalGap": 13.828125,
+    "horizontalGap": -30.5,
+    "overflow": false,
+    "sigmaText": "\u2014",
+    "phase": "RESULT",
+    "noteGap": null
+  },
+  {
+    "name": "missing-deviation",
+    "width": 421,
+    "sigma": {
+      "x": 34,
+      "y": 384.53125,
+      "right": 76.640625,
+      "bottom": 446.53125,
+      "width": 42.640625
+    },
+    "copy": {
+      "x": 34,
+      "y": 458.046875,
+      "right": 372,
+      "bottom": 498.078125,
+      "width": 338
+    },
+    "message": {
+      "x": 34,
+      "y": 481.046875,
+      "right": 372,
+      "bottom": 498.078125,
+      "width": 338
+    },
+    "box": {
+      "x": 19,
+      "y": 359.53125,
+      "right": 387,
+      "bottom": 513.078125,
+      "width": 368
+    },
+    "verticalGap": 11.515625,
+    "horizontalGap": -42.640625,
+    "overflow": false,
+    "sigmaText": "\u2014",
+    "phase": "RESULT",
+    "noteGap": null
+  },
+  {
+    "name": "missing-deviation",
+    "width": 430,
+    "sigma": {
+      "x": 34,
+      "y": 384.53125,
+      "right": 76.640625,
+      "bottom": 446.53125,
+      "width": 42.640625
+    },
+    "copy": {
+      "x": 34,
+      "y": 458.046875,
+      "right": 381,
+      "bottom": 498.078125,
+      "width": 347
+    },
+    "message": {
+      "x": 34,
+      "y": 481.046875,
+      "right": 381,
+      "bottom": 498.078125,
+      "width": 347
+    },
+    "box": {
+      "x": 19,
+      "y": 359.53125,
+      "right": 396,
+      "bottom": 513.078125,
+      "width": 377
+    },
+    "verticalGap": 11.515625,
+    "horizontalGap": -42.640625,
+    "overflow": false,
+    "sigmaText": "\u2014",
+    "phase": "RESULT",
+    "noteGap": null
+  },
+  {
+    "name": "missing-deviation",
+    "width": 721,
+    "sigma": {
+      "x": 52,
+      "y": 625.828125,
+      "right": 92.796875,
+      "bottom": 685.828125,
+      "width": 40.796875
+    },
+    "copy": {
+      "x": 251.234375,
+      "y": 620.640625,
+      "right": 653.984375,
+      "bottom": 674.4375,
+      "width": 402.75
+    },
+    "message": {
+      "x": 251.234375,
+      "y": 649.640625,
+      "right": 653.984375,
+      "bottom": 674.4375,
+      "width": 402.75
+    },
+    "box": {
+      "x": 33,
+      "y": 596.828125,
+      "right": 673,
+      "bottom": 698.25,
+      "width": 640
+    },
+    "verticalGap": -65.1875,
+    "horizontalGap": 158.4375,
+    "overflow": false,
+    "sigmaText": "\u2014",
+    "phase": "RESULT",
+    "noteGap": null
+  }
+]
